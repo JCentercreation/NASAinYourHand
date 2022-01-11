@@ -22,6 +22,9 @@
 		994F2DFB278DE797001FA186 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 994F2DFA278DE797001FA186 /* FirebaseDatabase */; };
 		994F2DFD278DE797001FA186 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 994F2DFC278DE797001FA186 /* FirebaseFirestore */; };
 		994F2DFF278DE797001FA186 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 994F2DFE278DE797001FA186 /* FirebaseFirestoreCombine-Community */; };
+		994F2E02278DEB20001FA186 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994F2E01278DEB20001FA186 /* SplashView.swift */; };
+		994F2E03278DEB20001FA186 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994F2E01278DEB20001FA186 /* SplashView.swift */; };
+		994F2E04278DEB20001FA186 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994F2E01278DEB20001FA186 /* SplashView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,7 @@
 		994F2DE2278DE1CC001FA186 /* NASAinYourHandUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASAinYourHandUITests.swift; sourceTree = "<group>"; };
 		994F2DE4278DE1CC001FA186 /* NASAinYourHandUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASAinYourHandUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		994F2DF1278DE304001FA186 /* GoogleService-Info-5.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-5.plist"; sourceTree = "<group>"; };
+		994F2E01278DEB20001FA186 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +150,7 @@
 		994F2E00278DE7DD001FA186 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				994F2E01278DEB20001FA186 /* SplashView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -295,6 +300,7 @@
 			files = (
 				994F2DCA278DE1CB001FA186 /* ContentView.swift in Sources */,
 				994F2DC8278DE1CB001FA186 /* NASAinYourHandApp.swift in Sources */,
+				994F2E02278DEB20001FA186 /* SplashView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				994F2DD9278DE1CB001FA186 /* NASAinYourHandTests.swift in Sources */,
+				994F2E03278DEB20001FA186 /* SplashView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +319,7 @@
 			files = (
 				994F2DE5278DE1CC001FA186 /* NASAinYourHandUITestsLaunchTests.swift in Sources */,
 				994F2DE3278DE1CC001FA186 /* NASAinYourHandUITests.swift in Sources */,
+				994F2E04278DEB20001FA186 /* SplashView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
