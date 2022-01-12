@@ -13,10 +13,10 @@ struct ContentView: View {
     
     var body: some View {
         VStack{
-            if isActive == false {
-                SplashView()
+            if isActive == true {
+                TabsView()
             } else {
-                //TODO: Implementar TabsView
+                SplashView()
             }
         }.onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {

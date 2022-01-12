@@ -19,7 +19,11 @@ struct TabsView: View {
     
     var body: some View {
         TabView(selection: $selection) {
-            
+            APOD_View()
+                .tag(Tab.APOD)
+                .tabItem {
+                    Label("APOD", systemImage: "photo")
+                }
         }
     }
 }

@@ -11,7 +11,7 @@ import SwiftUI
 struct NASAinYourHandApp: App {
     var body: some Scene {
         WindowGroup {
-            SplashView()
+            ContentView()
         }
     }
 }
