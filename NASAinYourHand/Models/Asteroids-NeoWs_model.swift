@@ -89,7 +89,7 @@ struct Asteroids_GET_request: Codable{
 
 var subscribersAsteroid = Set<AnyCancellable>()
 
-struct InfoAsteroid {
+struct InfoAsteroid: Hashable {
     var name: String
     var closeApproachDate: String
     var velocity: String

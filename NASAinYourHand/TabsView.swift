@@ -24,6 +24,11 @@ struct TabsView: View {
                 .tabItem {
                     Label("APOD", systemImage: "photo")
                 }
+            Asteroids_NeoWs_View()
+                .tag(Tab.NeoWs)
+                .tabItem {
+                    Label("Asteorids", systemImage: "mosaic")
+                }
         }
     }
 }
