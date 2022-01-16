@@ -11,7 +11,7 @@ import UIKit
 
 var subscribers = Set<AnyCancellable>()
 
-var apiKey: String = "DEMO_KEY"
+var apiKey: String = "vfC1VzlR2WfH9S8si12Gcb5WmbVA1lVGyZ757HlU"
 
 struct APOD_GET_response: Codable {
     let resource: String?
@@ -60,7 +60,7 @@ final class DayImage: ObservableObject {
     
     func getDayImage(completion: @escaping (Info) -> ()) {
         print("Funcion lanzada")
-        let url = URL(string: "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY")!
+        let url = URL(string: "https://api.nasa.gov/planetary/apod?api_key="+apiKey)!
 
         let jsonPublisher = URLSession.shared
             .dataTaskPublisher(for: url)
