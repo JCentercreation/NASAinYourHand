@@ -1,8 +1,8 @@
 //
-//  Asteroids-NeoWs_model.swift
+//  Asteroids-NeoWs_model_v2.swift
 //  NASAinYourHand
 //
-//  Created by Javier Carrillo Gallego on 13/1/22.
+//  Created by Javier Carrillo Gallego on 22/1/22.
 //
 
 import Foundation
@@ -20,26 +20,27 @@ final class Asteroides: ObservableObject {
         var isDanger: Bool
         var distance: String
     }
-    
+
     @Published var infoAsteroid: [InfoAsteroid]?
-    
+
     init(infoAsteroid: [InfoAsteroid]) {
         self.infoAsteroid = infoAsteroid
     }
-    
+
     func getAsteorids(date: Date, completion: @escaping ([InfoAsteroid]) -> ()){
-        print("Funcion lanzada")
+        print("Funcion Asteroids lanzada")
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         var dateString = formatter.string(from: date)
         let apiKey = "vfC1VzlR2WfH9S8si12Gcb5WmbVA1lVGyZ757HlU"
         var url = URL(string: "https://api.nasa.gov/neo/rest/v1/feed?start_date="+dateString+"&end_date="+dateString+"&api_key="+apiKey)!
-        
+        print(url)
+
         struct Links: Codable{
             let next: URL?
             let prev: URL?
             let current: URL?
-            
+
             enum CodingKeys: String, CodingKey {
                 case next = "next"
                 case prev = "prev"
@@ -49,11 +50,6 @@ final class Asteroides: ObservableObject {
 
         struct NearEarthObjects: Codable{
             let date: [Asteroid]?
-
-            enum CodingKeys: String, CodingKey {
-                case date = "2022-01-15"
-            }
-            
         }
 
         struct Asteroid: Codable{
@@ -106,7 +102,17 @@ final class Asteroides: ObservableObject {
         struct Asteroids_GET_response: Codable {
             let links: Links?
             let element_count: Int?
-            let near_earth_objects: NearEarthObjects?
+            var near_earth_objects: [Asteroid]?
+
+            init(from decoder: Decoder) throws {
+                let container = try decoder.container(keyedBy: CodingKeys.self)
+                self.links = try container.decode(Links.self, forKey: .links)
+                self.element_count = try container.decode(Int.self, forKey: .element_count)
+                let nearEarthOnjectsDic = try container.decode([String: [Asteroid]].self, forKey: .near_earth_objects)
+                nearEarthOnjectsDic.first.map { primero in
+                    self.near_earth_objects = primero.value
+                }
+            }
         }
 
         struct Asteroids_GET_request: Codable{
@@ -122,7 +128,7 @@ final class Asteroides: ObservableObject {
             .share()
             .receive(on: RunLoop.main)
             .eraseToAnyPublisher()
-        
+
         asteroidsPublisher.sink { completion in
             if case .failure(let error) = completion {
                 print("Algo ha fallado \(error)")
@@ -130,8 +136,8 @@ final class Asteroides: ObservableObject {
         } receiveValue: { asteroids in
             print("Recibida la respuesta")
             print("\(asteroids)")
-            
-            if let asteroides = asteroids.near_earth_objects?.date {
+
+            if let asteroides = asteroids.near_earth_objects {
                 for asteroid in asteroides {
                     var infoAsteroide = InfoAsteroid(name: "", closeApproachDate: "", velocity: "", isDanger: false, distance: "")
                     infoAsteroide.name = asteroid.name ?? ""
@@ -146,5 +152,6 @@ final class Asteroides: ObservableObject {
         }
         .store(in: &subscribers)
     }
-    
+
 }
+

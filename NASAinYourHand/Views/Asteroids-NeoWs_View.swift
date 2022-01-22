@@ -28,6 +28,7 @@ struct Asteroids_NeoWs_View: View {
     }()
     
     func asteroidsInfo(){
+        asteroids.infoAsteroid?.removeAll()
         asteroids.getAsteorids(date: date) { asteroides in
             for asteroide in asteroides {
                 asteroids.infoAsteroid?.append(asteroide)
