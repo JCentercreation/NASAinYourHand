@@ -27,7 +27,7 @@ struct Asteroids_NeoWs_View: View {
             calendar.date(from:endComponents)!
     }()
     
-    func asteroidsInfo(){
+    func asteroidsInfo(date: Date){
         asteroids.infoAsteroid?.removeAll()
         asteroids.getAsteorids(date: date) { asteroides in
             for asteroide in asteroides {
@@ -39,32 +39,44 @@ struct Asteroids_NeoWs_View: View {
     
     var body: some View {
         VStack{
-            DatePicker("Date", selection: $date,in: dateRange, displayedComponents: [.date])
-                .datePickerStyle(.graphical)
-                .onChange(of: date) { newValue in
-                    asteroidsInfo()
-                }
-            if asteroids.infoAsteroid?.isEmpty == false {
-                List {
-                    ForEach(asteroids.infoAsteroid ?? [], id: \.self) { asteroide in
-                        HStack{
-                            VStack(alignment: .leading){
-                                Text("Name: \(asteroide.name)")
-                                Text("Close approach date: \(asteroide.closeApproachDate)")
-                                Text("Velocity: \(asteroide.velocity) Km/h")
-                                Text("Closest distance: \(asteroide.distance) Km")
-                            }
-                            Spacer()
-                            if asteroide.isDanger == true {
-                                Image(systemName: "exclamationmark.triangle.fill")
-                                    .foregroundColor(.red)
+            VStack{
+                DatePicker("Date", selection: $date,in: dateRange, displayedComponents: [.date])
+                    .datePickerStyle(.graphical)
+                    .onChange(of: date) { newValue in
+                        asteroidsInfo(date: newValue)
+                    }
+            }
+            Spacer()
+            VStack{
+                if asteroids.infoAsteroid?.isEmpty == false {
+                    List {
+                        ForEach(asteroids.infoAsteroid ?? [], id: \.self) { asteroide in
+                            HStack{
+                                VStack(alignment: .leading){
+                                    Text("Name: \(asteroide.name)")
+                                    Text("Close approach date: \(asteroide.closeApproachDate)")
+                                    Text("Velocity: \(asteroide.velocity) Km/h")
+                                    Text("Closest distance: \(asteroide.distance) Km")
+                                }
+                                Spacer()
+                                if asteroide.isDanger == true {
+                                    Image(systemName: "exclamationmark.triangle.fill")
+                                        .foregroundColor(.red)
+                                }
                             }
                         }
                     }
+                } else {
+                    Spacer()
+                    ProgressView()
+                        .progressViewStyle(.circular)
+                        .tint(Color.blue)
+                        .scaleEffect(2, anchor: .center)
+                    Spacer()
                 }
-            } else {
-                Text("Loading Data")
             }
+        }.onAppear {
+            asteroidsInfo(date: Date.now)
         }
     }
 }

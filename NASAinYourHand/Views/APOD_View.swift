@@ -21,30 +21,39 @@ struct APOD_View: View {
     }
     
     var body: some View {
-        ScrollView {
-            ZStack{
-                Color.blue.blur(radius: 1000)
-                VStack{
-                    Text(dayImage.info?.title ?? "")
-                        .fontWeight(.bold)
-                    Image(uiImage: dayImage.info?.image ?? UIImage(systemName: "photo")!)
-                        .resizable()
-                        .scaledToFit()
-                        .cornerRadius(20)
-                        .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
+        VStack{
+            if dayImage.info?.date.isEmpty == false {
+                ScrollView {
                     ZStack{
-                        Color.blue.cornerRadius(20)
+                        Color.blue.blur(radius: 1000)
                         VStack{
-                            Text(dayImage.info?.date ?? "")
-                                .foregroundColor(.white)
+                            Text(dayImage.info?.title ?? "")
                                 .fontWeight(.bold)
-                                .multilineTextAlignment(.center)
-                            Text(dayImage.info?.explanation ?? "")
-                                .foregroundColor(.white)
-                                .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
+                            Image(uiImage: dayImage.info?.image ?? UIImage(systemName: "photo")!)
+                                .resizable()
+                                .scaledToFit()
+                                .cornerRadius(20)
+                                .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
+                            ZStack{
+                                Color.blue.cornerRadius(20)
+                                VStack{
+                                    Text(dayImage.info?.date ?? "")
+                                        .foregroundColor(.white)
+                                        .fontWeight(.bold)
+                                        .multilineTextAlignment(.center)
+                                    Text(dayImage.info?.explanation ?? "")
+                                        .foregroundColor(.white)
+                                        .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
+                                }
+                            }.padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
                         }
-                    }.padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
+                    }
                 }
+            } else {
+                ProgressView()
+                    .progressViewStyle(.circular)
+                    .tint(Color.blue)
+                    .scaleEffect(2, anchor: .center)
             }
         }.onAppear {
             self.getImageInfo()
