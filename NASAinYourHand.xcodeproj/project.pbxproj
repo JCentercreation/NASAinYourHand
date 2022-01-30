@@ -16,9 +16,6 @@
 		994F2DD9278DE1CB001FA186 /* NASAinYourHandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994F2DD8278DE1CB001FA186 /* NASAinYourHandTests.swift */; };
 		994F2DE3278DE1CC001FA186 /* NASAinYourHandUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994F2DE2278DE1CC001FA186 /* NASAinYourHandUITests.swift */; };
 		994F2DE5278DE1CC001FA186 /* NASAinYourHandUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994F2DE4278DE1CC001FA186 /* NASAinYourHandUITestsLaunchTests.swift */; };
-		994F2DF2278DE304001FA186 /* GoogleService-Info-5.plist in Resources */ = {isa = PBXBuildFile; fileRef = 994F2DF1278DE304001FA186 /* GoogleService-Info-5.plist */; };
-		994F2DF3278DE304001FA186 /* GoogleService-Info-5.plist in Resources */ = {isa = PBXBuildFile; fileRef = 994F2DF1278DE304001FA186 /* GoogleService-Info-5.plist */; };
-		994F2DF4278DE304001FA186 /* GoogleService-Info-5.plist in Resources */ = {isa = PBXBuildFile; fileRef = 994F2DF1278DE304001FA186 /* GoogleService-Info-5.plist */; };
 		994F2DF7278DE797001FA186 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 994F2DF6278DE797001FA186 /* FirebaseAuth */; };
 		994F2DF9278DE797001FA186 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 994F2DF8278DE797001FA186 /* FirebaseAuthCombine-Community */; };
 		994F2DFB278DE797001FA186 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 994F2DFA278DE797001FA186 /* FirebaseDatabase */; };
@@ -36,6 +33,7 @@
 		999E2B9F2790F2060010A2A2 /* Asteroids-NeoWs_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999E2B9E2790F2060010A2A2 /* Asteroids-NeoWs_View.swift */; };
 		999E2BA02790F2060010A2A2 /* Asteroids-NeoWs_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999E2B9E2790F2060010A2A2 /* Asteroids-NeoWs_View.swift */; };
 		999E2BA12790F2060010A2A2 /* Asteroids-NeoWs_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999E2B9E2790F2060010A2A2 /* Asteroids-NeoWs_View.swift */; };
+		99F9134527A72FDA00A75F60 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99F9134427A72FDA00A75F60 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,11 +66,11 @@
 		994F2DDE278DE1CC001FA186 /* NASAinYourHandUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NASAinYourHandUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		994F2DE2278DE1CC001FA186 /* NASAinYourHandUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASAinYourHandUITests.swift; sourceTree = "<group>"; };
 		994F2DE4278DE1CC001FA186 /* NASAinYourHandUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASAinYourHandUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		994F2DF1278DE304001FA186 /* GoogleService-Info-5.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-5.plist"; sourceTree = "<group>"; };
 		994F2E01278DEB20001FA186 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		994F2E05278E0C76001FA186 /* TabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsView.swift; sourceTree = "<group>"; };
 		994F2E0A278E15D2001FA186 /* APOD_model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APOD_model.swift; sourceTree = "<group>"; };
 		999E2B9E2790F2060010A2A2 /* Asteroids-NeoWs_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Asteroids-NeoWs_View.swift"; sourceTree = "<group>"; };
+		99F9134427A72FDA00A75F60 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,10 +126,10 @@
 		994F2DC6278DE1CB001FA186 /* NASAinYourHand */ = {
 			isa = PBXGroup;
 			children = (
+				99F9134427A72FDA00A75F60 /* GoogleService-Info.plist */,
 				994F2E0E278E2E37001FA186 /* NetworkTools */,
 				994F2E09278E15BE001FA186 /* Models */,
 				994F2E00278DE7DD001FA186 /* Views */,
-				994F2DF1278DE304001FA186 /* GoogleService-Info-5.plist */,
 				994F2DC7278DE1CB001FA186 /* NASAinYourHandApp.swift */,
 				994F2DC9278DE1CB001FA186 /* ContentView.swift */,
 				994F2E05278E0C76001FA186 /* TabsView.swift */,
@@ -307,8 +305,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				994F2DCF278DE1CB001FA186 /* Preview Assets.xcassets in Resources */,
-				994F2DF2278DE304001FA186 /* GoogleService-Info-5.plist in Resources */,
 				994F2DCC278DE1CB001FA186 /* Assets.xcassets in Resources */,
+				99F9134527A72FDA00A75F60 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,7 +314,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				994F2DF3278DE304001FA186 /* GoogleService-Info-5.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,7 +321,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				994F2DF4278DE304001FA186 /* GoogleService-Info-5.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
