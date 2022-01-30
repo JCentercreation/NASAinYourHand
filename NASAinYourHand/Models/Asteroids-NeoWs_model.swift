@@ -9,17 +9,17 @@ import Foundation
 import Combine
 import UIKit
 
+struct InfoAsteroid: Hashable {
+    var name: String
+    var closeApproachDate: String
+    var velocity: String
+    var isDanger: Bool
+    var distance: String
+}
+
 final class Asteroides: ObservableObject {
 
     var subscribersAsteroid = Set<AnyCancellable>()
-
-    struct InfoAsteroid: Hashable {
-        var name: String
-        var closeApproachDate: String
-        var velocity: String
-        var isDanger: Bool
-        var distance: String
-    }
 
     @Published var infoAsteroid: [InfoAsteroid]?
 

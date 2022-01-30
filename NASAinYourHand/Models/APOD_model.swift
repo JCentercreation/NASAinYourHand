@@ -83,7 +83,7 @@ final class DayImage: ObservableObject {
 
         let imagePublisher = jsonPublisher
             .flatMap { item in
-                getImage(url: item.url! )
+                getImage(url: item.url ?? URL(string: "https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg")!)
             }
 
         Publishers.Zip(jsonPublisher, imagePublisher)

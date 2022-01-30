@@ -10,8 +10,14 @@ import SwiftUI
 struct Asteroids_NeoWs_View: View {
     
     @StateObject var asteroids = Asteroides(infoAsteroid: [])
-    @State var isSearching: Bool = false
     @State var date: Date = Date.now
+    
+    @State private var showOnlyHazardous: Bool = false
+    private var hazardousAsteroids: [InfoAsteroid] {
+        asteroids.infoAsteroid?.filter({ asteroid in
+            (!showOnlyHazardous || asteroid.isDanger)
+        }) ?? [InfoAsteroid(name: "", closeApproachDate: "", velocity: "", isDanger: false, distance: "")]
+    }
     
     let dateRange: ClosedRange<Date> = {
         let calendar = Calendar.current
@@ -49,19 +55,44 @@ struct Asteroids_NeoWs_View: View {
             Spacer()
             VStack{
                 if asteroids.infoAsteroid?.isEmpty == false {
+                    HStack{
+                        Spacer()
+                        Toggle(isOn: $showOnlyHazardous) {
+                            Text("Show only hazardous asteroids")
+                        }.edgesIgnoringSafeArea(.bottom)
+                        Spacer()
+                    }
                     List {
-                        ForEach(asteroids.infoAsteroid ?? [], id: \.self) { asteroide in
-                            HStack{
-                                VStack(alignment: .leading){
-                                    Text("Name: \(asteroide.name)")
-                                    Text("Close approach date: \(asteroide.closeApproachDate)")
-                                    Text("Velocity: \(asteroide.velocity) Km/h")
-                                    Text("Closest distance: \(asteroide.distance) Km")
+                        if showOnlyHazardous == false {
+                            ForEach(asteroids.infoAsteroid ?? [], id: \.self) { asteroide in
+                                HStack{
+                                    VStack(alignment: .leading){
+                                        Text("Name: \(asteroide.name)")
+                                        Text("Close approach date: \(asteroide.closeApproachDate)")
+                                        Text("Velocity: \(asteroide.velocity) Km/h")
+                                        Text("Closest distance: \(asteroide.distance) Km")
+                                    }
+                                    Spacer()
+                                    if asteroide.isDanger == true {
+                                        Image(systemName: "exclamationmark.triangle.fill")
+                                            .foregroundColor(.red)
+                                    }
                                 }
-                                Spacer()
-                                if asteroide.isDanger == true {
-                                    Image(systemName: "exclamationmark.triangle.fill")
-                                        .foregroundColor(.red)
+                            }
+                        } else {
+                            ForEach(hazardousAsteroids, id: \.self) { asteroide in
+                                HStack{
+                                    VStack(alignment: .leading){
+                                        Text("Name: \(asteroide.name)")
+                                        Text("Close approach date: \(asteroide.closeApproachDate)")
+                                        Text("Velocity: \(asteroide.velocity) Km/h")
+                                        Text("Closest distance: \(asteroide.distance) Km")
+                                    }
+                                    Spacer()
+                                    if asteroide.isDanger == true {
+                                        Image(systemName: "exclamationmark.triangle.fill")
+                                            .foregroundColor(.red)
+                                    }
                                 }
                             }
                         }
