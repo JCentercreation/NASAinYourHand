@@ -8,14 +8,32 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var isActive: Bool = false
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack{
+            if isActive == true {
+                TabsView()
+            } else {
+                SplashView()
+            }
+        }.onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                withAnimation {
+                    self.isActive = true
+                }
+            }
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ForEach(["iPhone 13 Pro Max"], id: \.self) { device in
+            ContentView()
+                .previewDevice(PreviewDevice(rawValue: device))
+                .previewDisplayName(device)
+        }
     }
 }
