@@ -34,6 +34,10 @@
 		999E2BA02790F2060010A2A2 /* Asteroids-NeoWs_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999E2B9E2790F2060010A2A2 /* Asteroids-NeoWs_View.swift */; };
 		999E2BA12790F2060010A2A2 /* Asteroids-NeoWs_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999E2B9E2790F2060010A2A2 /* Asteroids-NeoWs_View.swift */; };
 		99F9134527A72FDA00A75F60 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99F9134427A72FDA00A75F60 /* GoogleService-Info.plist */; };
+		99F9134727A7321C00A75F60 /* SignIn_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F9134627A7321C00A75F60 /* SignIn_View.swift */; };
+		99F9134A27A7354400A75F60 /* mailStyleTextField_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F9134927A7354400A75F60 /* mailStyleTextField_View.swift */; };
+		99F9134C27A7357600A75F60 /* customColors_Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F9134B27A7357600A75F60 /* customColors_Color.swift */; };
+		99F9134E27A735B200A75F60 /* passwordStyleTextField_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F9134D27A735B200A75F60 /* passwordStyleTextField_View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +75,10 @@
 		994F2E0A278E15D2001FA186 /* APOD_model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APOD_model.swift; sourceTree = "<group>"; };
 		999E2B9E2790F2060010A2A2 /* Asteroids-NeoWs_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Asteroids-NeoWs_View.swift"; sourceTree = "<group>"; };
 		99F9134427A72FDA00A75F60 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		99F9134627A7321C00A75F60 /* SignIn_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn_View.swift; sourceTree = "<group>"; };
+		99F9134927A7354400A75F60 /* mailStyleTextField_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mailStyleTextField_View.swift; sourceTree = "<group>"; };
+		99F9134B27A7357600A75F60 /* customColors_Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customColors_Color.swift; sourceTree = "<group>"; };
+		99F9134D27A735B200A75F60 /* passwordStyleTextField_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = passwordStyleTextField_View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +134,7 @@
 		994F2DC6278DE1CB001FA186 /* NASAinYourHand */ = {
 			isa = PBXGroup;
 			children = (
+				99F9134827A7351200A75F60 /* Custom */,
 				99F9134427A72FDA00A75F60 /* GoogleService-Info.plist */,
 				994F2E0E278E2E37001FA186 /* NetworkTools */,
 				994F2E09278E15BE001FA186 /* Models */,
@@ -170,6 +179,7 @@
 				994F2E01278DEB20001FA186 /* SplashView.swift */,
 				992C8173278F5DC300334B9B /* APOD_View.swift */,
 				999E2B9E2790F2060010A2A2 /* Asteroids-NeoWs_View.swift */,
+				99F9134627A7321C00A75F60 /* SignIn_View.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -188,6 +198,16 @@
 			children = (
 			);
 			path = NetworkTools;
+			sourceTree = "<group>";
+		};
+		99F9134827A7351200A75F60 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				99F9134B27A7357600A75F60 /* customColors_Color.swift */,
+				99F9134927A7354400A75F60 /* mailStyleTextField_View.swift */,
+				99F9134D27A735B200A75F60 /* passwordStyleTextField_View.swift */,
+			);
+			path = Custom;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,11 +352,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				994F2DCA278DE1CB001FA186 /* ContentView.swift in Sources */,
+				99F9134A27A7354400A75F60 /* mailStyleTextField_View.swift in Sources */,
 				994F2DC8278DE1CB001FA186 /* NASAinYourHandApp.swift in Sources */,
+				99F9134C27A7357600A75F60 /* customColors_Color.swift in Sources */,
 				994F2E06278E0C76001FA186 /* TabsView.swift in Sources */,
 				994F2E02278DEB20001FA186 /* SplashView.swift in Sources */,
 				99475713279C983F00A947DF /* Asteroids-NeoWs_model.swift in Sources */,
+				99F9134727A7321C00A75F60 /* SignIn_View.swift in Sources */,
 				992C8174278F5DC300334B9B /* APOD_View.swift in Sources */,
+				99F9134E27A735B200A75F60 /* passwordStyleTextField_View.swift in Sources */,
 				999E2B9F2790F2060010A2A2 /* Asteroids-NeoWs_View.swift in Sources */,
 				994F2E0B278E15D2001FA186 /* APOD_model.swift in Sources */,
 			);
