@@ -54,11 +54,11 @@ struct Asteroids_NeoWs_View: View {
             }
             Spacer()
             VStack{
+                Toggle(isOn: $showOnlyHazardous) {
+                    Text("Show only hazardous asteroids")
+                        .fontWeight(.bold)
+                }.padding(.horizontal, 30)
                 if asteroids.infoAsteroid?.isEmpty == false {
-                    Toggle(isOn: $showOnlyHazardous) {
-                        Text("Show only hazardous asteroids")
-                            .fontWeight(.bold)
-                    }.padding(.horizontal, 30)
                     List {
                         if showOnlyHazardous == false {
                             ForEach(asteroids.infoAsteroid ?? [], id: \.self) { asteroide in
