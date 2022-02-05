@@ -46,7 +46,7 @@ struct SignIn_View: View {
                                         if signInError != nil {
                                             showSignInErrorAlert = true
                                         } else {
-                                            
+                                            isAuthorized = true
                                         }
                                     }
                                 } else {
@@ -62,11 +62,11 @@ struct SignIn_View: View {
                                 .shadow(color: Color.darkShadow, radius: 3, x: 2, y: 2)
                                 .shadow(color: Color.lightShadow, radius: 3, x: -2, y: -2)
                                 .alert(isPresented: $showEmailPassAlert){
-                                    Alert(title: Text("Somethong went wrong"), message: Text("Please write a proper email and password"), primaryButton: .cancel(Text("Undestood")),
+                                    Alert(title: Text("Something went wrong"), message: Text("Please write a proper email and password"), primaryButton: .cancel(Text("Understood")),
                                           secondaryButton: .destructive(Text("Cancel")))
                                 }
                                 .alert(isPresented: $showSignInErrorAlert){
-                                    Alert(title: Text("Did not sign in"), message: Text("The email or the password is not valid"), primaryButton: .cancel(Text("Undestood")),
+                                    Alert(title: Text("Did not sign in"), message: Text("The email or the password is not valid"), primaryButton: .cancel(Text("Understood")),
                                           secondaryButton: .destructive(Text("Cancel")))
                                 }
                                 .padding()

@@ -56,11 +56,11 @@ struct SignUp_View: View {
                     .shadow(color: Color.darkShadow, radius: 3, x: 2, y: 2)
                     .shadow(color: Color.lightShadow, radius: 3, x: -2, y: -2)
                     .alert(isPresented: $showEmailPassAlert){
-                        Alert(title: Text("Somethong went wrong"), message: Text("Please write a proper email and password"), primaryButton: .cancel(Text("Understood")),
+                        Alert(title: Text("Something went wrong"), message: Text("Please write a proper email and password"), primaryButton: .cancel(Text("Understood")),
                               secondaryButton: .destructive(Text("Cancel")))
                     }
                     .alert(isPresented: $showSignUpErrorAlert){
-                        Alert(title: Text("Somethong went wrong"), message: Text("An error ocurred while signing up"), primaryButton: .cancel(Text("Understood")),
+                        Alert(title: Text("Something went wrong"), message: Text("An error ocurred while signing up"), primaryButton: .cancel(Text("Understood")),
                               secondaryButton: .destructive(Text("Cancel")))
                     }
                 Spacer()
