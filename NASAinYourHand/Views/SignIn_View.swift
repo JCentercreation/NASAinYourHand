@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 
 struct SignIn_View: View {
     
@@ -15,7 +16,11 @@ struct SignIn_View: View {
     
     private var buttonText = "Sign In"
     
-    @State private var offset: CGFloat = 200.0
+    @State private var showSignInErrorAlert = false
+    
+    @State private var showEmailPassAlert = false
+    
+    @State private var showSignUpModal = false
     
     var body: some View {
         ZStack{
@@ -36,7 +41,17 @@ struct SignIn_View: View {
                         }.padding()
                         VStack{
                             Button {
-                                isAuthorized.toggle()
+                                if !userData.userPassword.isEmpty && !userData.userEmail.isEmpty {
+                                    Auth.auth().signIn(withEmail: userData.userEmail, password: userData.userPassword) { signInSuccess, signInError in
+                                        if signInError != nil {
+                                            showSignInErrorAlert = true
+                                        } else {
+                                            
+                                        }
+                                    }
+                                } else {
+                                    showEmailPassAlert = true
+                                }
                             } label: {
                                 Text("Sign In").fontWeight(.bold)
                             }.frame(width: 200, height: 50, alignment: .center)
@@ -46,12 +61,35 @@ struct SignIn_View: View {
                                 .aspectRatio(contentMode: .fit)
                                 .shadow(color: Color.darkShadow, radius: 3, x: 2, y: 2)
                                 .shadow(color: Color.lightShadow, radius: 3, x: -2, y: -2)
+                                .alert(isPresented: $showEmailPassAlert){
+                                    Alert(title: Text("Somethong went wrong"), message: Text("Please write a proper email and password"), primaryButton: .cancel(Text("Undestood")),
+                                          secondaryButton: .destructive(Text("Cancel")))
+                                }
+                                .alert(isPresented: $showSignInErrorAlert){
+                                    Alert(title: Text("Did not sign in"), message: Text("The email or the password is not valid"), primaryButton: .cancel(Text("Undestood")),
+                                          secondaryButton: .destructive(Text("Cancel")))
+                                }
+                                .padding()
+                            Button {
+                                showSignUpModal = true
+                            } label: {
+                                Text("Sign Up").fontWeight(.bold)
+                            }.foregroundColor(Color(red: 28 / 255, green: 60 / 255, blue: 140 / 255, opacity: 1))
+                                .cornerRadius(10)
+                                .aspectRatio(contentMode: .fit)
+                                .shadow(color: Color.darkShadow, radius: 3, x: 2, y: 2)
+                                .shadow(color: Color.lightShadow, radius: 3, x: -2, y: -2)
+                                .sheet(isPresented: $showSignUpModal) {
+                                    print("")
+                                } content: {
+                                    SignUp_View()
+                                }
 
                         }
                         Spacer()
                     }
                 } else {
-                    TabsView().transition(.asymmetric(insertion: .scale, removal: .opacity))
+                    TabsView()
                 }
             }
         }
