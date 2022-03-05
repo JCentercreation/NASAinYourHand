@@ -18,6 +18,8 @@ struct SignUp_View: View {
     
     @State private var showSignUpErrorAlert = false
     
+    @State private var showAlert = false
+    
     var body: some View {
         ZStack{
             Color.blue.blur(radius: 1000)
@@ -40,10 +42,12 @@ struct SignUp_View: View {
                     if !newUserData.userPassword.isEmpty && !newUserData.userEmail.isEmpty {
                         Auth.auth().createUser(withEmail: newUserData.userEmail, password: newUserData.userPassword) { succerr, error in
                             if error != nil {
+                                showAlert = true
                                 showSignUpErrorAlert = true
                             }
                         }
                     } else {
+                        showAlert = true
                         showEmailPassAlert = true
                     }
                 } label: {
@@ -59,9 +63,17 @@ struct SignUp_View: View {
                         Alert(title: Text("Something went wrong"), message: Text("Please write a proper email and password"), primaryButton: .cancel(Text("Understood")),
                               secondaryButton: .destructive(Text("Cancel")))
                     }
-                    .alert(isPresented: $showSignUpErrorAlert){
-                        Alert(title: Text("Something went wrong"), message: Text("An error ocurred while signing up"), primaryButton: .cancel(Text("Understood")),
-                              secondaryButton: .destructive(Text("Cancel")))
+                    .alert(isPresented: $showAlert){
+                        if showSignUpErrorAlert == true {
+                            return Alert(title: Text("Something went wrong"), message: Text("An error ocurred while signing up"), primaryButton: .cancel(Text("Understood")),
+                                  secondaryButton: .destructive(Text("Cancel")))
+                        } else if showEmailPassAlert == true {
+                            return Alert(title: Text("Something went wrong"), message: Text("Please fill both email and password textfields"), primaryButton: .cancel(Text("Understood")),
+                                  secondaryButton: .destructive(Text("Cancel")))
+                        } else {
+                            return Alert(title: Text("Something went wrong"), message: Text("Please fill both email and password textfields"), primaryButton: .cancel(Text("Understood")),
+                                         secondaryButton: .destructive(Text("Cancel")))
+                        }
                     }
                 Spacer()
             }.padding()

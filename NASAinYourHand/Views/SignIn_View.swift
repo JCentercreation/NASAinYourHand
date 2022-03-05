@@ -16,6 +16,8 @@ struct SignIn_View: View {
     
     private var buttonText = "Sign In"
     
+    @State private var showAlert = false
+    
     @State private var showSignInErrorAlert = false
     
     @State private var showEmailPassAlert = false
@@ -41,15 +43,20 @@ struct SignIn_View: View {
                         }.padding()
                         VStack{
                             Button {
+                                showAlert = false
+                                showEmailPassAlert = false
+                                showSignInErrorAlert = false
                                 if !userData.userPassword.isEmpty && !userData.userEmail.isEmpty {
                                     Auth.auth().signIn(withEmail: userData.userEmail, password: userData.userPassword) { signInSuccess, signInError in
                                         if signInError != nil {
+                                            showAlert = true
                                             showSignInErrorAlert = true
                                         } else {
                                             isAuthorized = true
                                         }
                                     }
                                 } else {
+                                    showAlert = true
                                     showEmailPassAlert = true
                                 }
                             } label: {
@@ -61,13 +68,17 @@ struct SignIn_View: View {
                                 .aspectRatio(contentMode: .fit)
                                 .shadow(color: Color.darkShadow, radius: 3, x: 2, y: 2)
                                 .shadow(color: Color.lightShadow, radius: 3, x: -2, y: -2)
-                                .alert(isPresented: $showEmailPassAlert){
-                                    Alert(title: Text("Something went wrong"), message: Text("Please write a proper email and password"), primaryButton: .cancel(Text("Understood")),
-                                          secondaryButton: .destructive(Text("Cancel")))
-                                }
-                                .alert(isPresented: $showSignInErrorAlert){
-                                    Alert(title: Text("Did not sign in"), message: Text("The email or the password is not valid"), primaryButton: .cancel(Text("Understood")),
-                                          secondaryButton: .destructive(Text("Cancel")))
+                                .alert(isPresented: $showAlert){
+                                    if showEmailPassAlert == true {
+                                        return Alert(title: Text("Something went wrong"), message: Text("Please write a proper email and password"), primaryButton: .cancel(Text("Understood")),
+                                              secondaryButton: .destructive(Text("Cancel")))
+                                    } else if showSignInErrorAlert == true {
+                                        return Alert(title: Text("Did not sign in"), message: Text("The email or the password is not valid"), primaryButton: .cancel(Text("Understood")),
+                                                     secondaryButton: .destructive(Text("Cancel")))
+                                    } else {
+                                        return Alert(title: Text("Did not sign in"), message: Text("The email or the password is not valid"), primaryButton: .cancel(Text("Understood")),
+                                                     secondaryButton: .destructive(Text("Cancel")))
+                                    }
                                 }
                                 .padding()
                             Button {

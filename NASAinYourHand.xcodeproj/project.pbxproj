@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9915D1CE27B03F3D00C827CA /* Apple_Athentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9915D1CD27B03F3D00C827CA /* Apple_Athentication.swift */; };
 		992C8174278F5DC300334B9B /* APOD_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992C8173278F5DC300334B9B /* APOD_View.swift */; };
 		99475713279C983F00A947DF /* Asteroids-NeoWs_model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99475712279C983F00A947DF /* Asteroids-NeoWs_model.swift */; };
 		994F2DC8278DE1CB001FA186 /* NASAinYourHandApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994F2DC7278DE1CB001FA186 /* NASAinYourHandApp.swift */; };
@@ -60,6 +61,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9915D1CD27B03F3D00C827CA /* Apple_Athentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apple_Athentication.swift; sourceTree = "<group>"; };
 		992C8173278F5DC300334B9B /* APOD_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APOD_View.swift; sourceTree = "<group>"; };
 		99475712279C983F00A947DF /* Asteroids-NeoWs_model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Asteroids-NeoWs_model.swift"; sourceTree = "<group>"; };
 		994F2DC4278DE1CB001FA186 /* NASAinYourHand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NASAinYourHand.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +117,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9915D1CC27B03F2700C827CA /* Authentications */ = {
+			isa = PBXGroup;
+			children = (
+				9915D1CD27B03F3D00C827CA /* Apple_Athentication.swift */,
+			);
+			path = Authentications;
+			sourceTree = "<group>";
+		};
 		994F2DBB278DE1CB001FA186 = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +148,7 @@
 		994F2DC6278DE1CB001FA186 /* NASAinYourHand */ = {
 			isa = PBXGroup;
 			children = (
+				9915D1CC27B03F2700C827CA /* Authentications */,
 				99F9134827A7351200A75F60 /* Custom */,
 				99F9134427A72FDA00A75F60 /* GoogleService-Info.plist */,
 				994F2E0E278E2E37001FA186 /* NetworkTools */,
@@ -366,6 +377,7 @@
 				99475713279C983F00A947DF /* Asteroids-NeoWs_model.swift in Sources */,
 				998A24A927AEE49900F9F48B /* User_model.swift in Sources */,
 				99F9134727A7321C00A75F60 /* SignIn_View.swift in Sources */,
+				9915D1CE27B03F3D00C827CA /* Apple_Athentication.swift in Sources */,
 				992C8174278F5DC300334B9B /* APOD_View.swift in Sources */,
 				998A24AB27AF183D00F9F48B /* SignUp_View.swift in Sources */,
 				99F9134E27A735B200A75F60 /* passwordStyleTextField_View.swift in Sources */,
