@@ -77,6 +77,7 @@
 		994F2E01278DEB20001FA186 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		994F2E05278E0C76001FA186 /* TabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsView.swift; sourceTree = "<group>"; };
 		994F2E0A278E15D2001FA186 /* APOD_model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APOD_model.swift; sourceTree = "<group>"; };
+		995879F927D4FA83006429F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		998A24A827AEE49900F9F48B /* User_model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User_model.swift; sourceTree = "<group>"; };
 		998A24AA27AF183D00F9F48B /* SignUp_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp_View.swift; sourceTree = "<group>"; };
 		999E2B9E2790F2060010A2A2 /* Asteroids-NeoWs_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Asteroids-NeoWs_View.swift"; sourceTree = "<group>"; };
@@ -148,6 +149,7 @@
 		994F2DC6278DE1CB001FA186 /* NASAinYourHand */ = {
 			isa = PBXGroup;
 			children = (
+				995879F927D4FA83006429F7 /* Info.plist */,
 				9915D1CC27B03F2700C827CA /* Authentications */,
 				99F9134827A7351200A75F60 /* Custom */,
 				99F9134427A72FDA00A75F60 /* GoogleService-Info.plist */,
@@ -554,6 +556,7 @@
 				DEVELOPMENT_TEAM = ZY94S5LYY4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NASAinYourHand/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -568,7 +571,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -583,6 +586,7 @@
 				DEVELOPMENT_TEAM = ZY94S5LYY4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NASAinYourHand/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -597,7 +601,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
