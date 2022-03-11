@@ -9,6 +9,10 @@ import SwiftUI
 
 struct TabsView: View {
     
+//    init() {
+//        UITabBar.appearance().backgroundColor = UIColor.red
+//    }
+    
     enum Tab {
         case APOD
         case NeoWs
@@ -29,6 +33,12 @@ struct TabsView: View {
                 .tabItem {
                     Label("Asteorids", systemImage: "mosaic")
                 }
+        }.onAppear {
+            let appearance = UITabBarAppearance()
+            appearance.backgroundColor = UIColor(Color.white.opacity(0.1))
+            appearance.backgroundEffect = UIBlurEffect(style: .light)
+            UITabBar.appearance().standardAppearance = appearance
+            UITabBar.appearance().scrollEdgeAppearance = appearance
         }
     }
 }
