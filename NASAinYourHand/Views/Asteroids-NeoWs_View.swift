@@ -45,13 +45,19 @@ struct Asteroids_NeoWs_View: View {
     
     var body: some View {
         VStack{
-            VStack{
-                DatePicker("Date", selection: $date,in: dateRange, displayedComponents: [.date])
-                    .datePickerStyle(.graphical)
-                    .onChange(of: date) { newValue in
-                        asteroidsInfo(date: newValue)
-                    }
+            HStack {
+                Text("Asteroids Near Earth")
+                    .fontWeight(.bold)
+                    .font(Font.title)
+                    .foregroundColor(.gray)
+                    .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
+                Spacer()
             }
+            DatePicker("Date", selection: $date,in: dateRange, displayedComponents: [.date])
+                .datePickerStyle(.graphical)
+                .onChange(of: date) { newValue in
+                    asteroidsInfo(date: newValue)
+                }
             Spacer()
             VStack{
                 Toggle(isOn: $showOnlyHazardous) {

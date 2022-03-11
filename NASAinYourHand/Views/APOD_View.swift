@@ -24,28 +24,39 @@ struct APOD_View: View {
         VStack{
             if dayImage.info?.date.isEmpty == false {
                 ScrollView {
-                    ZStack{
-                        Color.blue.blur(radius: 1000)
-                        VStack{
-                            Text(dayImage.info?.title ?? "")
+                    VStack{
+                        HStack{
+                            Text("Picture of the Day")
                                 .fontWeight(.bold)
-                            Image(uiImage: dayImage.info?.image ?? UIImage(systemName: "photo")!)
-                                .resizable()
-                                .scaledToFit()
-                                .cornerRadius(20)
+                                .font(Font.title)
+                                .foregroundColor(.gray)
+                            Spacer()
+                        }.padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
+                        ZStack(alignment: .bottomTrailing) {
+                            ZStack(alignment: .topLeading) {
+                                Image(uiImage: dayImage.info?.image ?? UIImage(systemName: "photo")!)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .cornerRadius(20)
+                                    .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
+                                Text(dayImage.info?.title ?? "")
+                                    .fontWeight(.bold)
+                                    .font(Font.title)
+                                    .foregroundColor(.white)
+                                    .padding(EdgeInsets(top: 10, leading: 35, bottom: 10, trailing: 0))
+                            }
+                            Text(dayImage.info?.date ?? "")
+                                .foregroundColor(.white)
+                                .fontWeight(.bold)
+                                .multilineTextAlignment(.center)
+                                .padding(EdgeInsets(top: 0, leading: 20, bottom: 10, trailing: 35))
+                        }
+                        VStack{
+                            Text(dayImage.info?.explanation ?? "")
+                                .foregroundColor(.black)
+                                .font(Font.headline)
+                                .multilineTextAlignment(.leading)
                                 .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
-                            ZStack{
-                                Color.blue.cornerRadius(20)
-                                VStack{
-                                    Text(dayImage.info?.date ?? "")
-                                        .foregroundColor(.white)
-                                        .fontWeight(.bold)
-                                        .multilineTextAlignment(.center)
-                                    Text(dayImage.info?.explanation ?? "")
-                                        .foregroundColor(.white)
-                                        .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
-                                }
-                            }.padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
                         }
                     }
                 }
