@@ -36,7 +36,7 @@ struct TabsView: View {
         }.onAppear {
             let appearance = UITabBarAppearance()
             appearance.backgroundColor = UIColor(Color.white.opacity(0.1))
-            appearance.backgroundEffect = UIBlurEffect(style: .light)
+            appearance.backgroundEffect = UIBlurEffect(style: .systemUltraThinMaterial)
             UITabBar.appearance().standardAppearance = appearance
             UITabBar.appearance().scrollEdgeAppearance = appearance
         }

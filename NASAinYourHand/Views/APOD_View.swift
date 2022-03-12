@@ -23,15 +23,9 @@ struct APOD_View: View {
     var body: some View {
         VStack{
             if dayImage.info?.date.isEmpty == false {
-                ScrollView {
-                    VStack{
-                        HStack{
-                            Text("Picture of the Day")
-                                .fontWeight(.bold)
-                                .font(Font.title)
-                                .foregroundColor(.gray)
-                            Spacer()
-                        }.padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
+                ZStack(alignment: .leading){
+                    ScrollView {
+                        Spacer(minLength: 50)
                         ZStack(alignment: .bottomTrailing) {
                             ZStack(alignment: .topLeading) {
                                 Image(uiImage: dayImage.info?.image ?? UIImage(systemName: "photo")!)
@@ -39,6 +33,11 @@ struct APOD_View: View {
                                     .scaledToFit()
                                     .cornerRadius(20)
                                     .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
+                                    .onTapGesture {
+                                        if let image = dayImage.info?.image {
+                                            actionSheet(image: image)
+                                        }
+                                    }
                                 Text(dayImage.info?.title ?? "")
                                     .fontWeight(.bold)
                                     .font(Font.title)
@@ -57,9 +56,20 @@ struct APOD_View: View {
                                 .font(Font.headline)
                                 .multilineTextAlignment(.leading)
                                 .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
+                            
                         }
                     }
+                    VStack{
+                        Text("Picture of the Day")
+                            .fontWeight(.bold)
+                            .font(Font.title)
+                            .foregroundColor(.gray)
+                            .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
+                        Spacer()
+                    }
+                    
                 }
+                
             } else {
                 ProgressView()
                     .progressViewStyle(.circular)
@@ -69,6 +79,11 @@ struct APOD_View: View {
         }.onAppear {
             self.getImageInfo()
         }
+    }
+    
+    func actionSheet(image: UIImage) {
+        let activityVC = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        UIApplication.shared.windows.first?.rootViewController?.present(activityVC, animated: true, completion: nil)
     }
     
 }
