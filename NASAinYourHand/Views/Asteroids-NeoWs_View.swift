@@ -75,6 +75,8 @@ struct Asteroids_NeoWs_View: View {
             if showDatePicker == true {
                 DatePicker("Date", selection: $date,in: dateRange, displayedComponents: [.date])
                     .datePickerStyle(.graphical)
+                    .environment(\.locale, Locale.init(identifier: "en_GB"))
+                    .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
                     .onChange(of: date) { newValue in
                         asteroidsInfo(date: newValue)
                     }
