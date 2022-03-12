@@ -16,10 +16,10 @@ struct ContentView: View {
             if isActive == true {
                 SignIn_View()
             } else {
-                SplashView()
+                Welcome_View()
             }
         }.onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 20) {
                 withAnimation {
                     self.isActive = true
                 }

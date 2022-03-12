@@ -84,6 +84,7 @@ struct APOD_View: View {
     func actionSheet(image: UIImage) {
         let activityVC = UIActivityViewController(activityItems: [image], applicationActivities: nil)
         UIApplication.shared.windows.first?.rootViewController?.present(activityVC, animated: true, completion: nil)
+
     }
     
 }
