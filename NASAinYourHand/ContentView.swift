@@ -14,12 +14,12 @@ struct ContentView: View {
     var body: some View {
         VStack{
             if isActive == true {
-                SignIn_View()
-            } else {
                 Welcome_View()
+            } else {
+                SplashView()
             }
         }.onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 20) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 withAnimation {
                     self.isActive = true
                 }

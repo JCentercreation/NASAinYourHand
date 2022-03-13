@@ -9,35 +9,93 @@ import SwiftUI
 
 struct Welcome_View: View {
     
-    @StateObject var dayImage = DayImage(info: Info(resource: "", concept_tags: false, title: "", date: "", media_type: "", explanation: "", concepts: "", copyright: "", service_version: "", image: UIImage(systemName: "photo")!))
-    
-    func getImageInfo() {
-        dayImage.getDayImage(completion: { info in
-            dayImage.info?.title = info.title
-            dayImage.info?.image = info.image
-            dayImage.info?.explanation = info.explanation
-            dayImage.info?.date = info.date
-            print(dayImage.info?.explanation as Any) } )
-    }
+    @State private var showText1: Bool = false
+    @State private var showText2: Bool = false
+    @State private var showText3: Bool = false
+    @State private var allTextShowed: Bool = false
+    @State private var animationFinished: Bool = false
     
     var body: some View {
-        ZStack{
-            if let image = dayImage.info?.image {
-                Image(uiImage: image)
+        if animationFinished {
+            TabsView()
+        } else {
+            ZStack{
+                Image("apod", bundle: .main)
                     .resizable()
-                    .scaledToFill()
-                    .edgesIgnoringSafeArea(.all)
+                    .scaleEffect(x: 1, y: 1, anchor: .center)
+                    .ignoresSafeArea(.all)
+                VisualEffectView(effect: UIBlurEffect(style: .dark))
+                    .ignoresSafeArea(.all)
+                VStack {
+                    if showText1 == true {
+                        Text("Welcome to your favourite space browser app")
+                            .foregroundColor(.white)
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .multilineTextAlignment(.center)
+                            .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
+                            .transition(AnyTransition.opacity.animation(.easeInOut(duration: 4.0)))
+                    }
+                    if showText2 == true {
+                        Text("now you can enjoy the astronomy picture of the day")
+                            .foregroundColor(.white)
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .multilineTextAlignment(.center)
+                            .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
+                            .transition(AnyTransition.opacity.animation(.easeInOut(duration: 4.0)))
+                            .padding(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0))
+                    }
+                    if showText3 == true {
+                        Text("and knowing the most hazardous asteorids.")
+                            .foregroundColor(.white)
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .multilineTextAlignment(.center)
+                            .transition(AnyTransition.opacity.animation(.easeInOut(duration: 4.0)))
+                            .padding(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0))
+                    }
+                }
             }
-        }
-        .ignoresSafeArea()
-        .onAppear {
-            self.getImageInfo()
+            .onAppear {
+                showText1 = true
+            }
+            .onTapGesture {
+                if !allTextShowed {
+                    withAnimation(.easeInOut(duration: 1)) {
+                        if !showText1 {
+                            showText1 = true
+                        } else if showText1 && !showText2 {
+                            showText2 = true
+                        } else if showText1 && showText2 && !showText3 {
+                            showText3 = true
+                        } else if showText1 && showText2 && showText3 {
+                            allTextShowed = true
+                        }
+                    }
+                }
+                if allTextShowed {
+                    withAnimation(.easeInOut(duration: 0.5)) {
+                        animationFinished = true
+                    }
+                }
+            }
         }
     }
 }
 
 struct Welcome_View_Previews: PreviewProvider {
     static var previews: some View {
-        Welcome_View()
+        ForEach(["iPhone 8", "iPhone 13 Pro Max", "iPhone 13 mini"], id:\.self) { device in
+            Welcome_View()
+                .previewDevice(PreviewDevice(rawValue: device))
+                .previewDisplayName(device)
+        }
     }
+}
+
+struct VisualEffectView: UIViewRepresentable {
+    var effect: UIVisualEffect?
+    func makeUIView(context: UIViewRepresentableContext<Self>) -> UIVisualEffectView { UIVisualEffectView() }
+    func updateUIView(_ uiView: UIVisualEffectView, context: UIViewRepresentableContext<Self>) { uiView.effect = effect }
 }
