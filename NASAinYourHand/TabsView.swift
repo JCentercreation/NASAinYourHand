@@ -16,7 +16,8 @@ struct TabsView: View {
     enum Tab {
         case APOD
         case NeoWs
-        case Exoplanet
+        case Mars
+        case Info
     }
     
     @State private var selection = Tab.APOD
@@ -31,7 +32,17 @@ struct TabsView: View {
             Asteroids_NeoWs_View()
                 .tag(Tab.NeoWs)
                 .tabItem {
-                    Label("Asteorids", systemImage: "mosaic")
+                    Label("Asteorids", systemImage: "aqi.medium")
+                }
+            Asteroids_NeoWs_View()
+                .tag(Tab.Mars)
+                .tabItem {
+                    Label("Mars", systemImage: "globe.asia.australia")
+                }
+            Asteroids_NeoWs_View()
+                .tag(Tab.Info)
+                .tabItem {
+                    Label("Info", systemImage: "info.circle")
                 }
         }.onAppear {
             let appearance = UITabBarAppearance()
