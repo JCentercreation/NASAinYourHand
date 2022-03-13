@@ -34,12 +34,12 @@ struct TabsView: View {
                 .tabItem {
                     Label("Asteorids", systemImage: "aqi.medium")
                 }
-            Asteroids_NeoWs_View()
+            MarsPhotos_View()
                 .tag(Tab.Mars)
                 .tabItem {
                     Label("Mars", systemImage: "globe.asia.australia")
                 }
-            Asteroids_NeoWs_View()
+            Info_View()
                 .tag(Tab.Info)
                 .tabItem {
                     Label("Info", systemImage: "info.circle")

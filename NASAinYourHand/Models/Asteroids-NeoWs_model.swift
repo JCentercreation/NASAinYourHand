@@ -28,7 +28,6 @@ final class Asteroides: ObservableObject {
     }
 
     func getAsteorids(date: Date, completion: @escaping ([InfoAsteroid]) -> ()){
-        print("Funcion Asteroids lanzada")
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         var dateString = formatter.string(from: date)

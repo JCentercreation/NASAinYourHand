@@ -37,6 +37,9 @@
 		999E2BA02790F2060010A2A2 /* Asteroids-NeoWs_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999E2B9E2790F2060010A2A2 /* Asteroids-NeoWs_View.swift */; };
 		999E2BA12790F2060010A2A2 /* Asteroids-NeoWs_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999E2B9E2790F2060010A2A2 /* Asteroids-NeoWs_View.swift */; };
 		99AFA6D127DD1E04008DACA4 /* Welcome_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AFA6D027DD1E04008DACA4 /* Welcome_View.swift */; };
+		99B8EFB927DE4317009CBFA7 /* MarsPhotos_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B8EFB827DE4317009CBFA7 /* MarsPhotos_View.swift */; };
+		99B8EFBB27DE434A009CBFA7 /* Info_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B8EFBA27DE434A009CBFA7 /* Info_View.swift */; };
+		99B8EFBD27DE4625009CBFA7 /* MarsPhotos_Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B8EFBC27DE4625009CBFA7 /* MarsPhotos_Model.swift */; };
 		99F9134527A72FDA00A75F60 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99F9134427A72FDA00A75F60 /* GoogleService-Info.plist */; };
 		99F9134727A7321C00A75F60 /* SignIn_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F9134627A7321C00A75F60 /* SignIn_View.swift */; };
 		99F9134A27A7354400A75F60 /* mailStyleTextField_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F9134927A7354400A75F60 /* mailStyleTextField_View.swift */; };
@@ -83,6 +86,9 @@
 		998A24AA27AF183D00F9F48B /* SignUp_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp_View.swift; sourceTree = "<group>"; };
 		999E2B9E2790F2060010A2A2 /* Asteroids-NeoWs_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Asteroids-NeoWs_View.swift"; sourceTree = "<group>"; };
 		99AFA6D027DD1E04008DACA4 /* Welcome_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome_View.swift; sourceTree = "<group>"; };
+		99B8EFB827DE4317009CBFA7 /* MarsPhotos_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsPhotos_View.swift; sourceTree = "<group>"; };
+		99B8EFBA27DE434A009CBFA7 /* Info_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info_View.swift; sourceTree = "<group>"; };
+		99B8EFBC27DE4625009CBFA7 /* MarsPhotos_Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsPhotos_Model.swift; sourceTree = "<group>"; };
 		99F9134427A72FDA00A75F60 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		99F9134627A7321C00A75F60 /* SignIn_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn_View.swift; sourceTree = "<group>"; };
 		99F9134927A7354400A75F60 /* mailStyleTextField_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mailStyleTextField_View.swift; sourceTree = "<group>"; };
@@ -201,6 +207,8 @@
 				99F9134627A7321C00A75F60 /* SignIn_View.swift */,
 				998A24AA27AF183D00F9F48B /* SignUp_View.swift */,
 				99AFA6D027DD1E04008DACA4 /* Welcome_View.swift */,
+				99B8EFB827DE4317009CBFA7 /* MarsPhotos_View.swift */,
+				99B8EFBA27DE434A009CBFA7 /* Info_View.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -211,6 +219,7 @@
 				994F2E0A278E15D2001FA186 /* APOD_model.swift */,
 				99475712279C983F00A947DF /* Asteroids-NeoWs_model.swift */,
 				998A24A827AEE49900F9F48B /* User_model.swift */,
+				99B8EFBC27DE4625009CBFA7 /* MarsPhotos_Model.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -377,11 +386,14 @@
 				99F9134A27A7354400A75F60 /* mailStyleTextField_View.swift in Sources */,
 				994F2DC8278DE1CB001FA186 /* NASAinYourHandApp.swift in Sources */,
 				99AFA6D127DD1E04008DACA4 /* Welcome_View.swift in Sources */,
+				99B8EFBB27DE434A009CBFA7 /* Info_View.swift in Sources */,
 				99F9134C27A7357600A75F60 /* customColors_Color.swift in Sources */,
 				994F2E06278E0C76001FA186 /* TabsView.swift in Sources */,
+				99B8EFBD27DE4625009CBFA7 /* MarsPhotos_Model.swift in Sources */,
 				994F2E02278DEB20001FA186 /* SplashView.swift in Sources */,
 				99475713279C983F00A947DF /* Asteroids-NeoWs_model.swift in Sources */,
 				998A24A927AEE49900F9F48B /* User_model.swift in Sources */,
+				99B8EFB927DE4317009CBFA7 /* MarsPhotos_View.swift in Sources */,
 				99F9134727A7321C00A75F60 /* SignIn_View.swift in Sources */,
 				9915D1CE27B03F3D00C827CA /* Apple_Athentication.swift in Sources */,
 				992C8174278F5DC300334B9B /* APOD_View.swift in Sources */,
