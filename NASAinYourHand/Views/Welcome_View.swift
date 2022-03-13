@@ -26,34 +26,33 @@ struct Welcome_View: View {
                     .ignoresSafeArea(.all)
                 VisualEffectView(effect: UIBlurEffect(style: .dark))
                     .ignoresSafeArea(.all)
-                VStack {
+                VStack(alignment: .leading) {
                     if showText1 == true {
                         Text("Welcome to your favourite space browser app")
                             .foregroundColor(.white)
                             .font(.title)
                             .fontWeight(.bold)
-                            .multilineTextAlignment(.center)
-                            .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
+                            .multilineTextAlignment(.leading)
                             .transition(AnyTransition.opacity.animation(.easeInOut(duration: 4.0)))
+                            .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
                     }
                     if showText2 == true {
-                        Text("now you can enjoy the astronomy picture of the day")
+                        Text("now you can daily enjoy an astronomy picture")
                             .foregroundColor(.white)
                             .font(.title)
                             .fontWeight(.bold)
-                            .multilineTextAlignment(.center)
-                            .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
+                            .multilineTextAlignment(.trailing)
                             .transition(AnyTransition.opacity.animation(.easeInOut(duration: 4.0)))
-                            .padding(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0))
+                            .padding(EdgeInsets(top: 20, leading: 20, bottom: 0, trailing: 20))
                     }
                     if showText3 == true {
-                        Text("and knowing the most hazardous asteorids.")
+                        Text("and get to know the most hazardous asteroids.")
                             .foregroundColor(.white)
                             .font(.title)
                             .fontWeight(.bold)
-                            .multilineTextAlignment(.center)
+                            .multilineTextAlignment(.leading)
                             .transition(AnyTransition.opacity.animation(.easeInOut(duration: 4.0)))
-                            .padding(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0))
+                            .padding(EdgeInsets(top: 20, leading: 20, bottom: 0, trailing: 20))
                     }
                 }
             }
