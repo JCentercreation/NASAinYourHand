@@ -23,52 +23,26 @@ struct APOD_View: View {
     var body: some View {
         VStack{
             if dayImage.info?.date.isEmpty == false {
-                ZStack(alignment: .leading){
-                    ScrollView {
-                        Spacer(minLength: 50)
-                        ZStack(alignment: .bottomTrailing) {
-                            ZStack(alignment: .topLeading) {
-                                Image(uiImage: dayImage.info?.image ?? UIImage(systemName: "photo")!)
-                                    .resizable()
-                                    .scaledToFit()
-                                    .cornerRadius(20)
-                                    .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
-                                    .onTapGesture {
-                                        if let image = dayImage.info?.image {
-                                            actionSheet(image: image)
-                                        }
-                                    }
-                                Text(dayImage.info?.title ?? "")
-                                    .fontWeight(.bold)
-                                    .font(Font.title)
-                                    .foregroundColor(.white)
-                                    .padding(EdgeInsets(top: 10, leading: 35, bottom: 10, trailing: 0))
-                            }
-                            Text(dayImage.info?.date ?? "")
-                                .foregroundColor(.white)
-                                .fontWeight(.bold)
-                                .multilineTextAlignment(.center)
-                                .padding(EdgeInsets(top: 0, leading: 20, bottom: 10, trailing: 35))
-                        }
-                        VStack{
-                            Text(dayImage.info?.explanation ?? "")
-                                .foregroundColor(.black)
-                                .font(Font.headline)
-                                .multilineTextAlignment(.leading)
-                                .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
-                            
-                        }
-                    }
-                    VStack{
-                        Text("Picture of the Day")
-                            .fontWeight(.bold)
-                            .font(Font.title)
-                            .foregroundColor(.gray)
-                            .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
+                VStack{
+                    HStack{
+                        Text("hola")
+                        Text(dayImage.info?.date ?? "")
+                            .font(Font.system(.title, design: .default))
+                            .padding(.vertical, 12)
+                            .padding(.horizontal, 15)
+                            .background(Color.white)
+                            .foregroundColor(Color.black)
+                            .cornerRadius(12)
+                            .padding(.top, 8)
                         Spacer()
+                        Text(dayImage.info?.title ?? "")
                     }
-                    
-                }
+                    Spacer()
+                }.background(Image(uiImage: dayImage.info?.image ?? UIImage(systemName: "photo")!)
+                                .resizable()
+                                .aspectRatio(contentMode: .fill), alignment: .center)
+                    .clipped()
+                    .ignoresSafeArea()
                 
             } else {
                 ProgressView()
@@ -91,7 +65,7 @@ struct APOD_View: View {
 
 struct APOD_View_Previews: PreviewProvider {
     static var previews: some View {
-        ForEach(["iPhone 13 Pro Max"], id:\.self){ device in
+        ForEach(["iPhone 13 Pro Max", "iPhone 8"], id:\.self){ device in
             APOD_View()
                 .previewDevice(PreviewDevice(rawValue: device))
                 .previewDisplayName(device)
