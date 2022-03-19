@@ -11,6 +11,8 @@ struct APOD_View: View {
     
     @StateObject var dayImage = DayImage(info: Info(resource: "", concept_tags: false, title: "", date: "", media_type: "", explanation: "", concepts: "", copyright: "", service_version: "", image: UIImage(systemName: "photo")!))
     
+    @State private var showBarraSuperior: Bool = true
+    
     func getImageInfo() {
         dayImage.getDayImage(completion: { info in
             dayImage.info?.title = info.title
@@ -22,37 +24,44 @@ struct APOD_View: View {
     
     var body: some View {
         VStack{
-            if dayImage.info?.date.isEmpty == false {
-                VStack{
-                    HStack{
-                        Text("hola")
-                        Text(dayImage.info?.date ?? "")
-                            .font(Font.system(.title, design: .default))
-                            .padding(.vertical, 12)
-                            .padding(.horizontal, 15)
-                            .background(Color.white)
-                            .foregroundColor(Color.black)
-                            .cornerRadius(12)
-                            .padding(.top, 8)
-                        Spacer()
-                        Text(dayImage.info?.title ?? "")
-                    }
-                    Spacer()
-                }.background(Image(uiImage: dayImage.info?.image ?? UIImage(systemName: "photo")!)
-                                .resizable()
-                                .aspectRatio(contentMode: .fill), alignment: .center)
-                    .clipped()
-                    .ignoresSafeArea()
+//            if dayImage.info?.date.isEmpty == false {
+//
+//            } else {
+//                ProgressView()
+//                    .progressViewStyle(.circular)
+//                    .tint(Color.blue)
+//                    .scaleEffect(2, anchor: .center)
+//            }
+            if showBarraSuperior == true {
                 
-            } else {
-                ProgressView()
-                    .progressViewStyle(.circular)
-                    .tint(Color.blue)
-                    .scaleEffect(2, anchor: .center)
+                    HStack(alignment: .center) {
+                        Text("")
+                            .frame(maxWidth: .infinity)
+                        Text(dayImage.info?.title ?? "")
+                            .foregroundColor(.black)
+                            .fontWeight(.bold)
+                            .padding(.vertical, 10)
+                            .frame(maxWidth: .infinity)
+                            .multilineTextAlignment(.center)
+                        Image(systemName: "arrow.up.circle.fill")
+                            .frame(maxWidth: .infinity)
+                            .padding(.leading, 50)
+                    }.background(.ultraThinMaterial)
+
             }
+            Spacer()
         }.onAppear {
             self.getImageInfo()
         }
+        .background(Image(uiImage: dayImage.info?.image ?? UIImage(systemName: "photo")!)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .ignoresSafeArea()
+                        .onTapGesture {
+            withAnimation(.easeInOut(duration: 1)) {
+                showBarraSuperior.toggle()
+            }
+        })
     }
     
     func actionSheet(image: UIImage) {
@@ -72,3 +81,4 @@ struct APOD_View_Previews: PreviewProvider {
         }
     }
 }
+
