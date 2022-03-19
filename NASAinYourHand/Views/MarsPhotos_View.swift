@@ -63,6 +63,23 @@ struct MarsPhotos_View: View {
                 }
             }.padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
                 .buttonStyle(.bordered)
+            HStack {
+                Button {
+                    withAnimation {
+                        showDatePicker.toggle()
+                    }
+                } label: {
+                    HStack {
+                        Text("Date")
+                            .foregroundColor(.black)
+                            .fontWeight(.bold)
+                        Spacer()
+                        Text("\(date.formatted(date: .numeric, time: .omitted))")
+                            .fontWeight(.bold)
+                    }
+                }
+            }.padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
+                .buttonStyle(.bordered)
             if showDatePicker == true {
                 DatePicker("Date", selection: $date,in: dateRange, displayedComponents: [.date])
                     .datePickerStyle(.graphical)
@@ -75,18 +92,25 @@ struct MarsPhotos_View: View {
             Spacer()
             VStack{
                 if marsPhotos.infoMarsPhotos?.isEmpty == false {
-                    List {
-                        ForEach(marsPhotos.infoMarsPhotos ?? [], id: \.self) { foto in
-                            AsyncImage(url: URL(string: foto.image_url), content: { image in
-                                image
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(maxWidth: 100, maxHeight: 100)
-                            }, placeholder: {
-                                ProgressView()
-                            })
+                    ScrollView {
+                        let columns = [
+                                GridItem(.adaptive(minimum: 80))
+                            ]
+                        LazyVGrid(columns: columns, spacing: 20) {
+                            ForEach(marsPhotos.infoMarsPhotos ?? [], id: \.self) { foto in
+                                AsyncImage(url: URL(string: foto.image_url), content: { image in
+                                    image
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(maxWidth: 100, maxHeight: 100)
+                                        .cornerRadius(15)
+                                        .shadow(color: .darkShadow, radius: 5, x: 0, y: 0)
+                                }, placeholder: {
+                                    ProgressView()
+                                })
+                            }
                         }
-                    }
+                    }.padding(EdgeInsets(top: 0, leading: 20, bottom: 20, trailing: 20))
                 } else {
                     Spacer()
                     ProgressView()
