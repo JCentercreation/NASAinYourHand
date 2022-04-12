@@ -27,37 +27,37 @@ struct APOD_View: View {
     var body: some View {
         VStack{
             if dayImage.info?.date.isEmpty == false {
-                    HStack(alignment: .center) {
-                        Button {
-                            showingSheet.toggle()
-                        } label: {
-                            Image(systemName: "note.text")
-                                .scaleEffect(1.2)
-                                .frame(maxWidth: .infinity)
-                                .padding(.trailing, 50)
-                                .tint(Color(red: 56 / 255, green: 119 / 255, blue: 237 / 255))
-                        }.sheet(isPresented: $showingSheet) {
-                            APOD_Details_View(dayImage: dayImage)
-                        }
-                        Text(dayImage.info?.title ?? "")
-                            .fontWeight(.bold)
-                            .fixedSize(horizontal: false, vertical: true)
-                            .foregroundColor(.black)
-                            .padding(.vertical, 5)
-                            .multilineTextAlignment(.center)
-                            .lineLimit(2)
-                        Button {
-                            shareSheet(image: dayImage.info!.image)
-                        } label: {
-                            Image(systemName: "square.and.arrow.up")
-                                .scaleEffect(1.2)
-                                .frame(maxWidth: .infinity)
-                                .padding(.leading, 50)
-                                .tint(Color(red: 56 / 255, green: 119 / 255, blue: 237 / 255))
-                        }
-                    }.background(Color(red: 181 / 255, green: 205 / 255, blue: 243 / 255).opacity(0.2))
-                Image(uiImage: dayImage.info!.image)
-                    .ignoresSafeArea(.all)
+                HStack(alignment: .center) {
+                    Button {
+                        showingSheet.toggle()
+                    } label: {
+                        Image(systemName: "note.text")
+                            .scaleEffect(1.2)
+                            .frame(maxWidth: .infinity)
+                            .padding(.trailing, 50)
+                            .tint(Color(red: 56 / 255, green: 119 / 255, blue: 237 / 255))
+                    }.sheet(isPresented: $showingSheet) {
+                        APOD_Details_View(dayImage: dayImage)
+                    }
+                    Text(dayImage.info?.title ?? "")
+                        .fontWeight(.bold)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .foregroundColor(.black)
+                        .padding(.vertical, 5)
+                        .multilineTextAlignment(.center)
+                        .lineLimit(2)
+                    Button {
+                        shareSheet(image: dayImage.info!.image)
+                    } label: {
+                        Image(systemName: "square.and.arrow.up")
+                            .scaleEffect(1.2)
+                            .frame(maxWidth: .infinity)
+                            .padding(.leading, 50)
+                            .tint(Color(red: 56 / 255, green: 119 / 255, blue: 237 / 255))
+                    }
+                }.background(Color(red: 181 / 255, green: 205 / 255, blue: 243 / 255).opacity(0.2))
+                    Image(uiImage: dayImage.info!.image)
+                        .ignoresSafeArea(.all)
             } else {
                 ProgressView()
                     .progressViewStyle(.circular)

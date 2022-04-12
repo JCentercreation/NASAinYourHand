@@ -41,6 +41,7 @@
 		999E2BA12790F2060010A2A2 /* Asteroids-NeoWs_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999E2B9E2790F2060010A2A2 /* Asteroids-NeoWs_View.swift */; };
 		99AFA6D127DD1E04008DACA4 /* Welcome_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AFA6D027DD1E04008DACA4 /* Welcome_View.swift */; };
 		99B587E12806255800C78147 /* APOD_Alert_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B587E02806255800C78147 /* APOD_Alert_View.swift */; };
+		99B587E32806361600C78147 /* APOD_View_v2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B587E22806361600C78147 /* APOD_View_v2.swift */; };
 		99B8EFB927DE4317009CBFA7 /* MarsPhotos_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B8EFB827DE4317009CBFA7 /* MarsPhotos_View.swift */; };
 		99B8EFBB27DE434A009CBFA7 /* Info_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B8EFBA27DE434A009CBFA7 /* Info_View.swift */; };
 		99B8EFBD27DE4625009CBFA7 /* MarsPhotos_Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B8EFBC27DE4625009CBFA7 /* MarsPhotos_Model.swift */; };
@@ -96,6 +97,7 @@
 		99AFA6D027DD1E04008DACA4 /* Welcome_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome_View.swift; sourceTree = "<group>"; };
 		99B587DF28060C6600C78147 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		99B587E02806255800C78147 /* APOD_Alert_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APOD_Alert_View.swift; sourceTree = "<group>"; };
+		99B587E22806361600C78147 /* APOD_View_v2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APOD_View_v2.swift; sourceTree = "<group>"; };
 		99B8EFB827DE4317009CBFA7 /* MarsPhotos_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsPhotos_View.swift; sourceTree = "<group>"; };
 		99B8EFBA27DE434A009CBFA7 /* Info_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info_View.swift; sourceTree = "<group>"; };
 		99B8EFBC27DE4625009CBFA7 /* MarsPhotos_Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsPhotos_Model.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 				99B8EFBA27DE434A009CBFA7 /* Info_View.swift */,
 				992B83CF2805DA3800A414E3 /* Introduction_View.swift */,
 				99B587E02806255800C78147 /* APOD_Alert_View.swift */,
+				99B587E22806361600C78147 /* APOD_View_v2.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				992B83D02805DA3800A414E3 /* Introduction_View.swift in Sources */,
 				994F2E06278E0C76001FA186 /* TabsView.swift in Sources */,
 				99B8EFBD27DE4625009CBFA7 /* MarsPhotos_Model.swift in Sources */,
+				99B587E32806361600C78147 /* APOD_View_v2.swift in Sources */,
 				994F2E02278DEB20001FA186 /* SplashView.swift in Sources */,
 				992B83CC2805B86800A414E3 /* APOD_Details_View.swift in Sources */,
 				99475713279C983F00A947DF /* Asteroids-NeoWs_model.swift in Sources */,
