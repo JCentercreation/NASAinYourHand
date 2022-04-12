@@ -51,6 +51,7 @@ struct TabsView: View {
             UITabBar.appearance().standardAppearance = appearance
             UITabBar.appearance().scrollEdgeAppearance = appearance
         }
+        .accentColor(.black)
     }
 }
 

@@ -13,6 +13,8 @@ struct APOD_View: View {
     
     @State private var showingSheet: Bool = false
     
+    @State var showingIntroductionView = InfoDefaults(alreadyLaunched: false).showIntroductionView()
+    
     func getImageInfo() {
         dayImage.getDayImage(completion: { info in
             dayImage.info?.title = info.title
@@ -62,6 +64,9 @@ struct APOD_View: View {
             }
         }.onAppear {
             self.getImageInfo()
+        }
+        .sheet(isPresented: $showingIntroductionView) {
+            Introduction_View()
         }
     }
     

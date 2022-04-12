@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		9915D1CE27B03F3D00C827CA /* Apple_Athentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9915D1CD27B03F3D00C827CA /* Apple_Athentication.swift */; };
 		992B83CC2805B86800A414E3 /* APOD_Details_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992B83CB2805B86800A414E3 /* APOD_Details_View.swift */; };
+		992B83CE2805C44E00A414E3 /* Info_model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992B83CD2805C44E00A414E3 /* Info_model.swift */; };
+		992B83D02805DA3800A414E3 /* Introduction_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992B83CF2805DA3800A414E3 /* Introduction_View.swift */; };
 		992C8174278F5DC300334B9B /* APOD_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992C8173278F5DC300334B9B /* APOD_View.swift */; };
 		99475713279C983F00A947DF /* Asteroids-NeoWs_model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99475712279C983F00A947DF /* Asteroids-NeoWs_model.swift */; };
 		994F2DC8278DE1CB001FA186 /* NASAinYourHandApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994F2DC7278DE1CB001FA186 /* NASAinYourHandApp.swift */; };
@@ -68,6 +70,8 @@
 /* Begin PBXFileReference section */
 		9915D1CD27B03F3D00C827CA /* Apple_Athentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apple_Athentication.swift; sourceTree = "<group>"; };
 		992B83CB2805B86800A414E3 /* APOD_Details_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APOD_Details_View.swift; sourceTree = "<group>"; };
+		992B83CD2805C44E00A414E3 /* Info_model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info_model.swift; sourceTree = "<group>"; };
+		992B83CF2805DA3800A414E3 /* Introduction_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Introduction_View.swift; sourceTree = "<group>"; };
 		992C8173278F5DC300334B9B /* APOD_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APOD_View.swift; sourceTree = "<group>"; };
 		99475712279C983F00A947DF /* Asteroids-NeoWs_model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Asteroids-NeoWs_model.swift"; sourceTree = "<group>"; };
 		994F2DC4278DE1CB001FA186 /* NASAinYourHand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NASAinYourHand.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -212,6 +216,7 @@
 				99AFA6D027DD1E04008DACA4 /* Welcome_View.swift */,
 				99B8EFB827DE4317009CBFA7 /* MarsPhotos_View.swift */,
 				99B8EFBA27DE434A009CBFA7 /* Info_View.swift */,
+				992B83CF2805DA3800A414E3 /* Introduction_View.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -223,6 +228,7 @@
 				99475712279C983F00A947DF /* Asteroids-NeoWs_model.swift */,
 				998A24A827AEE49900F9F48B /* User_model.swift */,
 				99B8EFBC27DE4625009CBFA7 /* MarsPhotos_Model.swift */,
+				992B83CD2805C44E00A414E3 /* Info_model.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -391,6 +397,7 @@
 				99AFA6D127DD1E04008DACA4 /* Welcome_View.swift in Sources */,
 				99B8EFBB27DE434A009CBFA7 /* Info_View.swift in Sources */,
 				99F9134C27A7357600A75F60 /* customColors_Color.swift in Sources */,
+				992B83D02805DA3800A414E3 /* Introduction_View.swift in Sources */,
 				994F2E06278E0C76001FA186 /* TabsView.swift in Sources */,
 				99B8EFBD27DE4625009CBFA7 /* MarsPhotos_Model.swift in Sources */,
 				994F2E02278DEB20001FA186 /* SplashView.swift in Sources */,
@@ -398,6 +405,7 @@
 				99475713279C983F00A947DF /* Asteroids-NeoWs_model.swift in Sources */,
 				998A24A927AEE49900F9F48B /* User_model.swift in Sources */,
 				99B8EFB927DE4317009CBFA7 /* MarsPhotos_View.swift in Sources */,
+				992B83CE2805C44E00A414E3 /* Info_model.swift in Sources */,
 				99F9134727A7321C00A75F60 /* SignIn_View.swift in Sources */,
 				9915D1CE27B03F3D00C827CA /* Apple_Athentication.swift in Sources */,
 				992C8174278F5DC300334B9B /* APOD_View.swift in Sources */,

@@ -8,8 +8,16 @@
 import SwiftUI
 
 struct Info_View: View {
+    
+    @StateObject var infoDefaults = InfoDefaults(alreadyLaunched: false)
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button {
+            infoDefaults.resetFirstLaunch()
+        } label: {
+            Text("Resetea los ajustes de usuario")
+        }
+
     }
 }
 
