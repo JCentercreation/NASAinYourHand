@@ -11,6 +11,8 @@ struct APOD_View: View {
     
     @StateObject var dayImage = DayImage(info: Info(resource: "", concept_tags: false, title: "", date: "", media_type: "", explanation: "", concepts: "", copyright: "", service_version: "", image: UIImage(systemName: "photo")!))
     
+    @State private var showingSheet: Bool = false
+    
     func getImageInfo() {
         dayImage.getDayImage(completion: { info in
             dayImage.info?.title = info.title
@@ -24,21 +26,30 @@ struct APOD_View: View {
         VStack{
             if dayImage.info?.date.isEmpty == false {
                     HStack(alignment: .center) {
-                        Text("")
-                            .frame(maxWidth: .infinity)
+                        Button {
+                            showingSheet.toggle()
+                        } label: {
+                            Image(systemName: "note.text")
+                                .frame(maxWidth: .infinity)
+                                .padding(.trailing, 50)
+                                .tint(Color.black)
+                        }.sheet(isPresented: $showingSheet) {
+                            APOD_Details_View(dayImage: dayImage)
+                        }
                         Text(dayImage.info?.title ?? "")
                             .fontWeight(.bold)
                             .fixedSize(horizontal: false, vertical: true)
                             .foregroundColor(.black)
-                            .padding(.vertical, 10)
+                            .padding(.vertical, 5)
                             .multilineTextAlignment(.center)
                             .lineLimit(2)
                         Button {
-                            actionSheet(image: dayImage.info!.image)
+                            shareSheet(image: dayImage.info!.image)
                         } label: {
                             Image(systemName: "square.and.arrow.up")
                                 .frame(maxWidth: .infinity)
                                 .padding(.leading, 50)
+                                .tint(Color.black)
                         }
                     }.background(.ultraThinMaterial)
                 Image(uiImage: dayImage.info!.image)
@@ -54,7 +65,7 @@ struct APOD_View: View {
         }
     }
     
-    func actionSheet(image: UIImage) {
+    func shareSheet(image: UIImage) {
         let activityVC = UIActivityViewController(activityItems: [image], applicationActivities: nil)
         UIApplication.shared.windows.first?.rootViewController?.present(activityVC, animated: true, completion: nil)
 
