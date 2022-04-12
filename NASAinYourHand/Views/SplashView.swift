@@ -9,26 +9,28 @@ import SwiftUI
 
 struct SplashView: View {
     
+    @State private var scaleEffectSize: CGFloat = 1
+    
     var body: some View {
         VStack(alignment: .center){
-            ZStack{
-                Color.blue
-                    .blur(radius: 1000)
-                    .ignoresSafeArea(.all)
-                VStack{
-                    VStack{
-                        Image("NASA_logo.svg", bundle: .main)
-                            .resizable()
-                            .scaledToFit()
-                    }
-                    VStack{
-                        Text("Welcome to NASA API data browser")
-                            .fontWeight(.bold)
-                            .padding()
-                        Text("Developed with ❤️ by Javier Carrillo")
-                    }.padding()
-                }
+            VStack {
+                Spacer()
+                VStack {
+                    Image("AppIcon_logo", bundle: .main)
+                        .cornerRadius(20)
+                    Text("Space Browser App")
+                        .fontWeight(.bold)
+                        .foregroundColor(Color(red: 56 / 255, green: 119 / 255, blue: 237 / 255))
+                }.scaleEffect(scaleEffectSize)
+                    .animation(.easeInOut(duration: 1), value: scaleEffectSize)
+                Spacer()
+                Text("JCentercreation© 2022")
+                    .font(.footnote)
+                    .fontWeight(.bold)
+                    .foregroundColor(Color(red: 181 / 255, green: 205 / 255, blue: 243 / 255))
             }
+        }.onAppear {
+            scaleEffectSize += 0.3
         }
     }
 }
