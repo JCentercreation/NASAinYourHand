@@ -11,8 +11,6 @@ struct APOD_View: View {
     
     @StateObject var dayImage = DayImage(info: Info(resource: "", concept_tags: false, title: "", date: "", media_type: "", explanation: "", concepts: "", copyright: "", service_version: "", image: UIImage(systemName: "photo")!))
     
-    @State private var showBarraSuperior: Bool = true
-    
     func getImageInfo() {
         dayImage.getDayImage(completion: { info in
             dayImage.info?.title = info.title
@@ -24,8 +22,7 @@ struct APOD_View: View {
     
     var body: some View {
         VStack{
-            if showBarraSuperior == true {
-                
+            if dayImage.info?.date.isEmpty == false {
                     HStack(alignment: .center) {
                         Text("")
                             .frame(maxWidth: .infinity)
@@ -36,25 +33,25 @@ struct APOD_View: View {
                             .padding(.vertical, 10)
                             .multilineTextAlignment(.center)
                             .lineLimit(2)
-                        Image(systemName: "arrow.up.circle.fill")
-                            .frame(maxWidth: .infinity)
-                            .padding(.leading, 50)
+                        Button {
+                            actionSheet(image: dayImage.info!.image)
+                        } label: {
+                            Image(systemName: "square.and.arrow.up")
+                                .frame(maxWidth: .infinity)
+                                .padding(.leading, 50)
+                        }
                     }.background(.ultraThinMaterial)
-
+                Image(uiImage: dayImage.info!.image)
+                    .ignoresSafeArea(.all)
+            } else {
+                ProgressView()
+                    .progressViewStyle(.circular)
+                    .tint(Color.blue)
+                    .scaleEffect(2, anchor: .center)
             }
-            Spacer()
         }.onAppear {
             self.getImageInfo()
         }
-        .background(Image(uiImage: dayImage.info?.image ?? UIImage(systemName: "photo")!)
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .ignoresSafeArea()
-                        .onTapGesture {
-            withAnimation(.easeInOut(duration: 1)) {
-                showBarraSuperior.toggle()
-            }
-        })
     }
     
     func actionSheet(image: UIImage) {
