@@ -23,10 +23,12 @@ struct APOD_Details_View: View {
             }
             Spacer()
             if dayImage.info?.date.isEmpty == false {
-                Text("Date: " + dayImage.info!.date)
-                Text("Title: " + dayImage.info!.title)
+                VStack{
+                    Text("Date: " + dayImage.info!.date)
+                    Text("Title: " + dayImage.info!.title)
+                }.padding()
                 Text(dayImage.info!.explanation)
-                    .multilineTextAlignment(.center)
+                    .multilineTextAlignment(.leading)
                 Text(dayImage.info!.copyright)
                     .foregroundColor(Color.red)
             } else {
