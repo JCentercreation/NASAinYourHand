@@ -59,10 +59,12 @@ struct MarsPhotos_View: View {
                         Spacer()
                         Text("\(date.formatted(date: .numeric, time: .omitted))")
                             .fontWeight(.bold)
+                            .foregroundColor(Color(red: 56 / 255, green: 119 / 255, blue: 237 / 255))
                     }
                 }
-            }.padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
-                .buttonStyle(.bordered)
+            }.buttonStyle(.bordered)
+            .tint(Color(red: 181 / 255, green: 205 / 255, blue: 243 / 255))
+            .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
             if showDatePicker == true {
                 DatePicker("Date", selection: $date,in: dateRange, displayedComponents: [.date])
                     .datePickerStyle(.graphical)

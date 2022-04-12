@@ -35,7 +35,7 @@ struct APOD_View: View {
                                 .scaleEffect(1.2)
                                 .frame(maxWidth: .infinity)
                                 .padding(.trailing, 50)
-                                .tint(Color.black)
+                                .tint(Color(red: 56 / 255, green: 119 / 255, blue: 237 / 255))
                         }.sheet(isPresented: $showingSheet) {
                             APOD_Details_View(dayImage: dayImage)
                         }
@@ -53,9 +53,9 @@ struct APOD_View: View {
                                 .scaleEffect(1.2)
                                 .frame(maxWidth: .infinity)
                                 .padding(.leading, 50)
-                                .tint(Color.black)
+                                .tint(Color(red: 56 / 255, green: 119 / 255, blue: 237 / 255))
                         }
-                    }.background(.ultraThinMaterial)
+                    }.background(Color(red: 181 / 255, green: 205 / 255, blue: 243 / 255).opacity(0.2))
                 Image(uiImage: dayImage.info!.image)
                     .ignoresSafeArea(.all)
             } else {

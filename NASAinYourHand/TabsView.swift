@@ -46,12 +46,12 @@ struct TabsView: View {
                 }
         }.onAppear {
             let appearance = UITabBarAppearance()
-            appearance.backgroundColor = UIColor(Color.white.opacity(0.1))
+            appearance.backgroundColor = UIColor(Color(red: 181 / 255, green: 205 / 255, blue: 243 / 255).opacity(0.2))
             appearance.backgroundEffect = UIBlurEffect(style: .systemUltraThinMaterial)
             UITabBar.appearance().standardAppearance = appearance
             UITabBar.appearance().scrollEdgeAppearance = appearance
         }
-        .accentColor(.black)
+        .accentColor(Color(red: 56 / 255, green: 119 / 255, blue: 237 / 255))
     }
 }
 

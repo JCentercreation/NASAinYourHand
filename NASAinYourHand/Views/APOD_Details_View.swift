@@ -19,7 +19,7 @@ struct APOD_Details_View: View {
                 presentationMode.wrappedValue.dismiss()
             } label: {
                 Image(systemName: "chevron.down")
-                    .tint(Color.black)
+                    .tint(Color(red: 56 / 255, green: 119 / 255, blue: 237 / 255))
             }
             Spacer()
             if dayImage.info?.date.isEmpty == false {
