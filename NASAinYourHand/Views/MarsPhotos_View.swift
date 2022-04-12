@@ -63,23 +63,6 @@ struct MarsPhotos_View: View {
                 }
             }.padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
                 .buttonStyle(.bordered)
-            HStack {
-                Button {
-                    withAnimation {
-                        showDatePicker.toggle()
-                    }
-                } label: {
-                    HStack {
-                        Text("Date")
-                            .foregroundColor(.black)
-                            .fontWeight(.bold)
-                        Spacer()
-                        Text("\(date.formatted(date: .numeric, time: .omitted))")
-                            .fontWeight(.bold)
-                    }
-                }
-            }.padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
-                .buttonStyle(.bordered)
             if showDatePicker == true {
                 DatePicker("Date", selection: $date,in: dateRange, displayedComponents: [.date])
                     .datePickerStyle(.graphical)
