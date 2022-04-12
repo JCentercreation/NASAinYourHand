@@ -24,8 +24,10 @@ struct APOD_Details_View: View {
             Spacer()
             if dayImage.info?.date.isEmpty == false {
                 VStack{
-                    Text("Date: " + dayImage.info!.date)
-                    Text("Title: " + dayImage.info!.title)
+                    Text(dayImage.info!.date)
+                        .fontWeight(.bold)
+                    Text(dayImage.info!.title)
+                        .fontWeight(.bold)
                 }.padding()
                 Text(dayImage.info!.explanation)
                     .multilineTextAlignment(.leading)
