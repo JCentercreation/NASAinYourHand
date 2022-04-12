@@ -24,14 +24,6 @@ struct APOD_View: View {
     
     var body: some View {
         VStack{
-//            if dayImage.info?.date.isEmpty == false {
-//
-//            } else {
-//                ProgressView()
-//                    .progressViewStyle(.circular)
-//                    .tint(Color.blue)
-//                    .scaleEffect(2, anchor: .center)
-//            }
             if showBarraSuperior == true {
                 
                     HStack(alignment: .center) {

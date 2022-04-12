@@ -14,7 +14,7 @@ struct ContentView: View {
     var body: some View {
         VStack{
             if isActive == true {
-                Welcome_View()
+                TabsView()
             } else {
                 SplashView()
             }
