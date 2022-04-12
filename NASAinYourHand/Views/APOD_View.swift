@@ -32,6 +32,7 @@ struct APOD_View: View {
                             showingSheet.toggle()
                         } label: {
                             Image(systemName: "note.text")
+                                .scaleEffect(1.2)
                                 .frame(maxWidth: .infinity)
                                 .padding(.trailing, 50)
                                 .tint(Color.black)
@@ -49,6 +50,7 @@ struct APOD_View: View {
                             shareSheet(image: dayImage.info!.image)
                         } label: {
                             Image(systemName: "square.and.arrow.up")
+                                .scaleEffect(1.2)
                                 .frame(maxWidth: .infinity)
                                 .padding(.leading, 50)
                                 .tint(Color.black)
