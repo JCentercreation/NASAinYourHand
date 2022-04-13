@@ -93,7 +93,7 @@ struct APOD_View_v3: View {
                         }
                         APOD_PopOver_View(dayImage: dayImage)
                             .padding(50)
-                            .background(.ultraThinMaterial)
+                            .background(Color.white.opacity(0.3))
                             .onTapGesture {
                                 withAnimation(.easeInOut(duration: 0.3)) {
                                     showingPopOver.toggle()

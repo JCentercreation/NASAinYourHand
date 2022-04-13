@@ -13,10 +13,6 @@ struct APOD_PopOver_View: View {
     
     var body: some View {
         List() {
-            HStack {
-                Spacer()
-                Image(systemName: "pip.exit")
-            }
             if dayImage.info?.date.isEmpty == false {
                 HStack(alignment: .center) {
                     Spacer()
