@@ -26,7 +26,7 @@
 "AsteroidsNeoWsView.datePicker.title" = "Date";
 "AsteroidsNeoWsView.filterToggle.title" = "Show only hazardous asteroids";
 "AsteroidsNeoWsView.cell.name" = "Name: ";
-"AsteroidsNeoWsView.cell.velocity" = "Velocity";
+"AsteroidsNeoWsView.cell.velocity" = "Velocity: ";
 "AsteroidsNeoWsView.cell.velocity.km" = " Km/h";
 "AsteroidsNeoWsView.cell.distance" = "Closest distance: ";
 "AsteroidsNeoWsView.cell.distance.km" = " Km";

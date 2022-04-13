@@ -39,24 +39,13 @@ struct APOD_View_v3: View {
                     }.safeAreaInset(edge: .top) {
                         HStack(alignment: .center, spacing: 0) {
                             Button {
-                                withAnimation(.easeInOut(duration: 0.3)) {
+                                withAnimation(.easeInOut(duration: 0.5)) {
                                     showingPopOver.toggle()
                                 }
                             } label: {
-                                Image(systemName: "note.text")
-                                    .padding(8)
-                                    
-                            }.sheet(isPresented: $showingSheet) {
-                                APOD_Details_View(dayImage: dayImage)
-                            }
-                            Divider()
-                                .frame(maxHeight: 30)
-                            Button {
-                                shareSheet(image: dayImage.info!.image)
-                            } label: {
-                                Image(systemName: "square.and.arrow.up")
-                                    .padding(8)
-                                    
+                                Image(systemName: "eye.square.fill")
+                                    .scaleEffect(2)
+                                    .foregroundColor(.black)
                             }
                         }.background(.regularMaterial, in: RoundedRectangle(cornerRadius: 8, style: .continuous))
                     }
@@ -72,26 +61,17 @@ struct APOD_View_v3: View {
                         }.safeAreaInset(edge: .top) {
                             HStack(alignment: .center, spacing: 0) {
                                 Button {
-                                    showingPopOver.toggle()
+                                    withAnimation(.easeInOut(duration: 0.5)) {
+                                        showingPopOver.toggle()
+                                    }
                                 } label: {
-                                    Image(systemName: "note.text")
-                                        .padding(8)
-                                        
-                                }.sheet(isPresented: $showingSheet) {
-                                    APOD_Details_View(dayImage: dayImage)
-                                }
-                                Divider()
-                                    .frame(maxHeight: 30)
-                                Button {
-                                    shareSheet(image: dayImage.info!.image)
-                                } label: {
-                                    Image(systemName: "square.and.arrow.up")
-                                        .padding(8)
-                                        
+                                    Image(systemName: "eye.square.fill")
+                                        .scaleEffect(2)
+                                        .foregroundColor(.black)
                                 }
                             }.background(.regularMaterial, in: RoundedRectangle(cornerRadius: 8, style: .continuous))
                         }
-                        APOD_PopOver_View(dayImage: dayImage)
+                        APOD_PopOver_View_v2(dayImage: dayImage)
                             .padding(50)
                             .background(Color.white.opacity(0.3))
                             .onTapGesture {
@@ -114,12 +94,7 @@ struct APOD_View_v3: View {
             Introduction_View()
         }
     }
-    
-    func shareSheet(image: UIImage) {
-        let activityVC = UIActivityViewController(activityItems: [image], applicationActivities: nil)
-        UIApplication.shared.windows.first?.rootViewController?.present(activityVC, animated: true, completion: nil)
 
-    }
 }
 
 struct APOD_View_v3_Previews: PreviewProvider {
