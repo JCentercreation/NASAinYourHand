@@ -13,6 +13,7 @@
 		992B83D02805DA3800A414E3 /* Introduction_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992B83CF2805DA3800A414E3 /* Introduction_View.swift */; };
 		992C8174278F5DC300334B9B /* APOD_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992C8173278F5DC300334B9B /* APOD_View.swift */; };
 		99471DFE2806FD2100928A58 /* APOD_View_v3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99471DFD2806FD2100928A58 /* APOD_View_v3.swift */; };
+		99471E00280706C600928A58 /* APOD_PopOver_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99471DFF280706C600928A58 /* APOD_PopOver_View.swift */; };
 		99475713279C983F00A947DF /* Asteroids-NeoWs_model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99475712279C983F00A947DF /* Asteroids-NeoWs_model.swift */; };
 		994F2DC8278DE1CB001FA186 /* NASAinYourHandApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994F2DC7278DE1CB001FA186 /* NASAinYourHandApp.swift */; };
 		994F2DCA278DE1CB001FA186 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994F2DC9278DE1CB001FA186 /* ContentView.swift */; };
@@ -78,6 +79,7 @@
 		992B83CF2805DA3800A414E3 /* Introduction_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Introduction_View.swift; sourceTree = "<group>"; };
 		992C8173278F5DC300334B9B /* APOD_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APOD_View.swift; sourceTree = "<group>"; };
 		99471DFD2806FD2100928A58 /* APOD_View_v3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APOD_View_v3.swift; sourceTree = "<group>"; };
+		99471DFF280706C600928A58 /* APOD_PopOver_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APOD_PopOver_View.swift; sourceTree = "<group>"; };
 		99475712279C983F00A947DF /* Asteroids-NeoWs_model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Asteroids-NeoWs_model.swift"; sourceTree = "<group>"; };
 		994F2DC4278DE1CB001FA186 /* NASAinYourHand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NASAinYourHand.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		994F2DC7278DE1CB001FA186 /* NASAinYourHandApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASAinYourHandApp.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 				99B587E02806255800C78147 /* APOD_Alert_View.swift */,
 				99B587E22806361600C78147 /* APOD_View_v2.swift */,
 				99471DFD2806FD2100928A58 /* APOD_View_v3.swift */,
+				99471DFF280706C600928A58 /* APOD_PopOver_View.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 				99B8EFBD27DE4625009CBFA7 /* MarsPhotos_Model.swift in Sources */,
 				99B587E32806361600C78147 /* APOD_View_v2.swift in Sources */,
 				994F2E02278DEB20001FA186 /* SplashView.swift in Sources */,
+				99471E00280706C600928A58 /* APOD_PopOver_View.swift in Sources */,
 				992B83CC2805B86800A414E3 /* APOD_Details_View.swift in Sources */,
 				99475713279C983F00A947DF /* Asteroids-NeoWs_model.swift in Sources */,
 				998A24A927AEE49900F9F48B /* User_model.swift in Sources */,

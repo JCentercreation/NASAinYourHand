@@ -12,6 +12,8 @@ struct APOD_View_v3: View {
     
     @State private var showingSheet: Bool = false
     
+    @State private var showingPopOver: Bool = false
+    
     @State var showingIntroductionView = InfoDefaults(alreadyLaunched: false).showIntroductionView()
     
     func getImageInfo() {
@@ -26,34 +28,78 @@ struct APOD_View_v3: View {
     var body: some View {
         VStack{
             if dayImage.info?.date.isEmpty == false {
-                VStack {
-                    Image(uiImage: dayImage.info!.image)
-                        .resizable()
-                        .scaledToFill()
-                        .edgesIgnoringSafeArea(.top)
-                        .edgesIgnoringSafeArea(.leading)
-                        .edgesIgnoringSafeArea(.trailing)
-                }.safeAreaInset(edge: .top) {
-                    HStack(alignment: .center, spacing: 0) {
-                        Button {
-                            showingSheet.toggle()
-                        } label: {
-                            Image(systemName: "note.text")
-                                .padding(8)
-                                
-                        }.sheet(isPresented: $showingSheet) {
-                            APOD_Details_View(dayImage: dayImage)
+                if showingPopOver == false {
+                    VStack {
+                        Image(uiImage: dayImage.info!.image)
+                            .resizable()
+                            .scaledToFill()
+                            .edgesIgnoringSafeArea(.top)
+                            .edgesIgnoringSafeArea(.leading)
+                            .edgesIgnoringSafeArea(.trailing)
+                    }.safeAreaInset(edge: .top) {
+                        HStack(alignment: .center, spacing: 0) {
+                            Button {
+                                withAnimation(.easeInOut(duration: 0.3)) {
+                                    showingPopOver.toggle()
+                                }
+                            } label: {
+                                Image(systemName: "note.text")
+                                    .padding(8)
+                                    
+                            }.sheet(isPresented: $showingSheet) {
+                                APOD_Details_View(dayImage: dayImage)
+                            }
+                            Divider()
+                                .frame(maxHeight: 30)
+                            Button {
+                                shareSheet(image: dayImage.info!.image)
+                            } label: {
+                                Image(systemName: "square.and.arrow.up")
+                                    .padding(8)
+                                    
+                            }
+                        }.background(.regularMaterial, in: RoundedRectangle(cornerRadius: 8, style: .continuous))
+                    }
+                } else {
+                    ZStack {
+                        VStack {
+                            Image(uiImage: dayImage.info!.image)
+                                .resizable()
+                                .scaledToFill()
+                                .edgesIgnoringSafeArea(.top)
+                                .edgesIgnoringSafeArea(.leading)
+                                .edgesIgnoringSafeArea(.trailing)
+                        }.safeAreaInset(edge: .top) {
+                            HStack(alignment: .center, spacing: 0) {
+                                Button {
+                                    showingPopOver.toggle()
+                                } label: {
+                                    Image(systemName: "note.text")
+                                        .padding(8)
+                                        
+                                }.sheet(isPresented: $showingSheet) {
+                                    APOD_Details_View(dayImage: dayImage)
+                                }
+                                Divider()
+                                    .frame(maxHeight: 30)
+                                Button {
+                                    shareSheet(image: dayImage.info!.image)
+                                } label: {
+                                    Image(systemName: "square.and.arrow.up")
+                                        .padding(8)
+                                        
+                                }
+                            }.background(.regularMaterial, in: RoundedRectangle(cornerRadius: 8, style: .continuous))
                         }
-                        Divider()
-                            .frame(maxHeight: 30)
-                        Button {
-                            shareSheet(image: dayImage.info!.image)
-                        } label: {
-                            Image(systemName: "square.and.arrow.up")
-                                .padding(8)
-                                
-                        }
-                    }.background(.regularMaterial, in: RoundedRectangle(cornerRadius: 8, style: .continuous))
+                        APOD_PopOver_View(dayImage: dayImage)
+                            .padding(50)
+                            .background(.ultraThinMaterial)
+                            .onTapGesture {
+                                withAnimation(.easeInOut(duration: 0.3)) {
+                                    showingPopOver.toggle()
+                                }
+                            }
+                    }
                 }
             } else {
                 ProgressView()
@@ -78,7 +124,7 @@ struct APOD_View_v3: View {
 
 struct APOD_View_v3_Previews: PreviewProvider {
     static var previews: some View {
-        ForEach(["iPhone 13 Pro Max"], id: \.self) { device in
+        ForEach(["iPhone 13 Pro Max", "iPhone 8"], id: \.self) { device in
             APOD_View_v3()
                 .previewDevice(PreviewDevice(rawValue: device))
                 .previewDisplayName(device)
