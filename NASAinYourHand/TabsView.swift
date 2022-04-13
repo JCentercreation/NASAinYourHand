@@ -27,22 +27,22 @@ struct TabsView: View {
             APOD_View_v3()
                 .tag(Tab.APOD)
                 .tabItem {
-                    Label("APOD", systemImage: "photo")
+                    Label(NSLocalizedString("TabsView.apodTag.title", comment: ""), systemImage: "photo")
                 }
             Asteroids_NeoWs_View()
                 .tag(Tab.NeoWs)
                 .tabItem {
-                    Label("Asteorids", systemImage: "aqi.medium")
+                    Label(NSLocalizedString("TabsView.asteroidsTag.title", comment: ""), systemImage: "aqi.medium")
                 }
             MarsPhotos_View()
                 .tag(Tab.Mars)
                 .tabItem {
-                    Label("Mars", systemImage: "globe.asia.australia")
+                    Label(NSLocalizedString("TabsView.marsTag.title", comment: ""), systemImage: "globe.asia.australia")
                 }
             Info_View()
                 .tag(Tab.Info)
                 .tabItem {
-                    Label("Info", systemImage: "info.circle")
+                    Label(NSLocalizedString("TabsView.infoTag.title", comment: ""), systemImage: "info.circle")
                 }
         }.onAppear {
             let appearance = UITabBarAppearance()

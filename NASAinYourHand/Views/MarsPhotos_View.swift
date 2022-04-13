@@ -39,7 +39,7 @@ struct MarsPhotos_View: View {
     var body: some View {
         VStack{
             HStack {
-                Text("Mars Pictures")
+                Text(NSLocalizedString("MarsPhotosView.title", comment: ""))
                     .fontWeight(.bold)
                     .font(Font.title)
                     .foregroundColor(.gray)
@@ -53,7 +53,7 @@ struct MarsPhotos_View: View {
                     }
                 } label: {
                     HStack {
-                        Text("Date")
+                        Text(NSLocalizedString("MarsPhotosView.dateField.title", comment: ""))
                             .foregroundColor(.black)
                             .fontWeight(.bold)
                         Spacer()
@@ -66,7 +66,7 @@ struct MarsPhotos_View: View {
             .tint(Color(red: 181 / 255, green: 205 / 255, blue: 243 / 255))
             .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
             if showDatePicker == true {
-                DatePicker("Date", selection: $date,in: dateRange, displayedComponents: [.date])
+                DatePicker(NSLocalizedString("MarsPhotosView.datePicker.title", comment: ""), selection: $date,in: dateRange, displayedComponents: [.date])
                     .datePickerStyle(.graphical)
                     .environment(\.locale, Locale.init(identifier: "en_GB"))
                     .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))

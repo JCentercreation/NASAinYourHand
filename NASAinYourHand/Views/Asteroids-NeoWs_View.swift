@@ -48,7 +48,7 @@ struct Asteroids_NeoWs_View: View {
     var body: some View {
         VStack{
             HStack {
-                Text("Asteroids Near Earth")
+                Text(NSLocalizedString("AsteroidsNeoWsView.title", comment: ""))
                     .fontWeight(.bold)
                     .font(Font.title)
                     .foregroundColor(.gray)
@@ -62,7 +62,7 @@ struct Asteroids_NeoWs_View: View {
                     }
                 } label: {
                     HStack {
-                        Text("Date")
+                        Text(NSLocalizedString("AsteroidsNeoWsView.dateField.title", comment: ""))
                             .foregroundColor(.black)
                             .fontWeight(.bold)
                         Spacer()
@@ -75,7 +75,7 @@ struct Asteroids_NeoWs_View: View {
             .tint(Color(red: 181 / 255, green: 205 / 255, blue: 243 / 255))
             .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
             if showDatePicker == true {
-                DatePicker("Date", selection: $date,in: dateRange, displayedComponents: [.date])
+                DatePicker(NSLocalizedString("AsteroidsNeoWsView.datePicker.title", comment: ""), selection: $date,in: dateRange, displayedComponents: [.date])
                     .datePickerStyle(.graphical)
                     .environment(\.locale, Locale.init(identifier: "en_GB"))
                     .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
@@ -86,7 +86,7 @@ struct Asteroids_NeoWs_View: View {
             Spacer()
             VStack{
                 Toggle(isOn: $showOnlyHazardous) {
-                    Text("Show only hazardous asteroids")
+                    Text(NSLocalizedString("AsteroidsNeoWsView.filterToggle.title", comment: ""))
                         .fontWeight(.bold)
                 }.padding(.horizontal, 30)
                     .tint(Color(red: 56 / 255, green: 119 / 255, blue: 237 / 255))
@@ -96,10 +96,9 @@ struct Asteroids_NeoWs_View: View {
                             ForEach(asteroids.infoAsteroid ?? [], id: \.self) { asteroide in
                                 HStack{
                                     VStack(alignment: .leading){
-                                        Text("Name: \(asteroide.name)")
-                                        Text("Close approach date: \(asteroide.closeApproachDate)")
-                                        Text("Velocity: \(asteroide.velocity) Km/h")
-                                        Text("Closest distance: \(asteroide.distance) Km")
+                                        Text(NSLocalizedString("AsteroidsNeoWsView.cell.name", comment: "") + asteroide.name)
+                                        Text(NSLocalizedString("AsteroidsNeoWsView.cell.velocity", comment: "") + "\(round(Double(asteroide.velocity)!))" + NSLocalizedString("AsteroidsNeoWsView.cell.velocity.km", comment: ""))
+                                        Text(NSLocalizedString("AsteroidsNeoWsView.cell.distance", comment: "") + "\(round(Double(asteroide.distance)!))" + NSLocalizedString("AsteroidsNeoWsView.cell.distance.km", comment: ""))
                                     }
                                     Spacer()
                                     if asteroide.isDanger == true {
@@ -112,10 +111,9 @@ struct Asteroids_NeoWs_View: View {
                             ForEach(hazardousAsteroids, id: \.self) { asteroide in
                                 HStack{
                                     VStack(alignment: .leading){
-                                        Text("Name: \(asteroide.name)")
-                                        Text("Close approach date: \(asteroide.closeApproachDate)")
-                                        Text("Velocity: \(asteroide.velocity) Km/h")
-                                        Text("Closest distance: \(asteroide.distance) Km")
+                                        Text(NSLocalizedString("AsteroidsNeoWsView.cell.name", comment: "") + asteroide.name)
+                                        Text(NSLocalizedString("AsteroidsNeoWsView.cell.velocity", comment: "") +  "\(round(Double(asteroide.velocity)!))"  + NSLocalizedString("AsteroidsNeoWsView.cell.velocity.km", comment: ""))
+                                        Text(NSLocalizedString("AsteroidsNeoWsView.cell.distance", comment: "") + "\(round(Double(asteroide.distance)!))" + NSLocalizedString("AsteroidsNeoWsView.cell.distance.km", comment: ""))
                                     }
                                     Spacer()
                                     if asteroide.isDanger == true {

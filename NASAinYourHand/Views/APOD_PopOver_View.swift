@@ -41,7 +41,7 @@ struct APOD_PopOver_View: View {
                     Spacer()
                 }
             } else {
-                Text("No hay información para mostrar")
+                Text(NSLocalizedString("APODPopOverView.noInfoMessage.title", comment: ""))
             }
         }.listStyle(.sidebar)
             .cornerRadius(15)

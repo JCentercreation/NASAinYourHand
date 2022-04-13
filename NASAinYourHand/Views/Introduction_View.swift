@@ -13,7 +13,7 @@ struct Introduction_View: View {
     
     var body: some View {
         VStack {
-            Text("Welcome")
+            Text(NSLocalizedString("IntroductionView.title", comment: ""))
                 .font(.title)
                 .fontWeight(.bold)
                 .padding()
@@ -26,11 +26,11 @@ struct Introduction_View: View {
                             .padding()
                     }.frame(width: 70, height: 70, alignment: .center)
                     VStack(alignment: .leading) {
-                        Text("Astronomical Picture of the Day")
+                        Text(NSLocalizedString("IntroductionView.firstItem.title", comment: ""))
                             .font(.callout)
                             .fontWeight(.bold)
-                        Text("Check the astronomical picture of the day. Learn all science information about the picture and the author.")
-                            .font(.callout)
+                        Text(NSLocalizedString("IntroductionView.firstItem.subtitle", comment: ""))
+                            .font(.body)
                             .foregroundColor(Color.gray)
                     }
                 }.padding()
@@ -42,11 +42,11 @@ struct Introduction_View: View {
                             .padding()
                     }.frame(width: 70, height: 70, alignment: .center)
                     VStack(alignment: .leading) {
-                        Text("Asteroids Near Earth")
+                        Text(NSLocalizedString("IntroductionView.secondItem.title", comment: ""))
                             .font(.callout)
                             .fontWeight(.bold)
-                        Text("Get to know the asteroids that are surrounding our planet and filter by the most hazardous ones.")
-                            .font(.callout)
+                        Text(NSLocalizedString("IntroductionView.secondItem.subtitle", comment: ""))
+                            .font(.body)
                             .foregroundColor(Color.gray)
                     }
                 }.padding()
@@ -58,11 +58,11 @@ struct Introduction_View: View {
                             .padding()
                     }.frame(width: 70, height: 70, alignment: .center)
                     VStack(alignment: .leading) {
-                        Text("Mars Rovers Exploration Images")
+                        Text(NSLocalizedString("IntroductionView.thirdItem.title", comment: ""))
                             .font(.callout)
                             .fontWeight(.bold)
-                        Text("Multiple rovers are exploring the red planet and capturing amazing pictures.")
-                            .font(.callout)
+                        Text(NSLocalizedString("IntroductionView.thirdItem.subtitle", comment: ""))
+                            .font(.body)
                             .foregroundColor(Color.gray)
                     }
                 }.padding()
@@ -71,7 +71,7 @@ struct Introduction_View: View {
                 .frame(maxHeight: 50)
                 .padding()
                 .overlay(
-                    Text("Continue")
+                    Text(NSLocalizedString("IntroductionView.continueButton.title", comment: ""))
                         .fontWeight(.bold)
                         .foregroundColor(Color.white)
                 )
@@ -85,7 +85,7 @@ struct Introduction_View: View {
 
 struct Introduction_View_Previews: PreviewProvider {
     static var previews: some View {
-        ForEach(["iPhone 13 Pro Max"], id: \.self) { device in
+        ForEach(["iPhone 13 Pro Max", "iPhone 13 Pro"], id: \.self) { device in
             Introduction_View()
                 .previewDevice(PreviewDevice(rawValue: device))
                 .previewDisplayName(device)

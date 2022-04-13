@@ -5,3 +5,36 @@
   Created by Javier Carrillo Gallego on 12/4/22.
   
 */
+"IntroductionView.title" = "Bienvenido";
+"IntroductionView.firstItem.title" = "Fotografía astronómica diaria";
+"IntroductionView.firstItem.subtitle" = "Consulta la fotografía astronómica del dái. Aprende toda la información científica sobre ella y su autor.";
+"IntroductionView.secondItem.title" = "Asteroides cercanos";
+"IntroductionView.secondItem.subtitle" = "Conoce los asteroides localizados y filtralos en base a su peligrosidad para el planeta Tierra.";
+"IntroductionView.thirdItem.title" = "Imágenes de Marte";
+"IntroductionView.thirdItem.subtitle" = "Varios rovers están explorando el planeta rojo y están tomando impresionantes fotografías sobre él.";
+"IntroductionView.continueButton.title" = "Continua";
+
+"TabsView.apodTag.title" = "APOD";
+"TabsView.asteroidsTag.title" = "Asteroides";
+"TabsView.marsTag.title" = "Marte";
+"TabsView.infoTag.title" = "Info";
+
+"APODPopOverView.noInfoMessage.title" = "No hay información para mostrar";
+
+"AsteroidsNeoWsView.title" = "Asteroides cercanos";
+"AsteroidsNeoWsView.dateField.title" = "Fecha";
+"AsteroidsNeoWsView.datePicker.title" = "Fecha";
+"AsteroidsNeoWsView.filterToggle.title" = "Asteroides peligrosos";
+"AsteroidsNeoWsView.cell.name" = "Nombre: ";
+"AsteroidsNeoWsView.cell.velocity" = "Velocidad: ";
+"AsteroidsNeoWsView.cell.velocity.km" = " Km/h";
+"AsteroidsNeoWsView.cell.distance" = "Distancia más cercana: ";
+"AsteroidsNeoWsView.cell.distance.km" = " Km";
+
+"MarsPhotosView.title" = "Rovers en Marte";
+"MarsPhotosView.dateField.title" = "Fecha";
+"MarsPhotosView.datePicker.title" = "Fecha";
+
+"InfoView.title" = "";
+"InfoView.message" = "Esta App ha sido desarrollada sólo para propósitos educacionales. Todos los derechos están reservados a NASA©.";
+"InfoView.webLink.title" = "Visita my web";

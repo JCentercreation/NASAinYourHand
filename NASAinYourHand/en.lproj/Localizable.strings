@@ -5,3 +5,39 @@
   Created by Javier Carrillo Gallego on 12/4/22.
   
 */
+"IntroductionView.title" = "Welcome";
+"IntroductionView.firstItem.title" = "Astronomical Picture of the Day";
+"IntroductionView.firstItem.subtitle" = "Check the astronomical picture of the day. Learn all science information about the picture and the author.";
+"IntroductionView.secondItem.title" = "Asteroids Near Earth";
+"IntroductionView.secondItem.subtitle" = "Get to know the asteroids that are surrounding our planet and filter by the most hazardous ones.";
+"IntroductionView.thirdItem.title" = "Mars Rovers Exploration Images";
+"IntroductionView.thirdItem.subtitle" = "Multiple rovers are exploring the red planet and capturing amazing pictures.";
+"IntroductionView.continueButton.title" = "Continue";
+
+"TabsView.apodTag.title" = "APOD";
+"TabsView.asteroidsTag.title" = "Asteroids";
+"TabsView.marsTag.title" = "Mars";
+"TabsView.infoTag.title" = "Info";
+
+"APODPopOverView.noInfoMessage.title" = "There is no information to show";
+
+"AsteroidsNeoWsView.title" = "Asteroids Near Earth";
+"AsteroidsNeoWsView.dateField.title" = "Date";
+"AsteroidsNeoWsView.datePicker.title" = "Date";
+"AsteroidsNeoWsView.filterToggle.title" = "Show only hazardous asteroids";
+"AsteroidsNeoWsView.cell.name" = "Name: ";
+"AsteroidsNeoWsView.cell.velocity" = "Velocity";
+"AsteroidsNeoWsView.cell.velocity.km" = " Km/h";
+"AsteroidsNeoWsView.cell.distance" = "Closest distance: ";
+"AsteroidsNeoWsView.cell.distance.km" = " Km";
+
+"MarsPhotosView.title" = "Mars Pictures";
+"MarsPhotosView.dateField.title" = "Date";
+"MarsPhotosView.datePicker.title" = "Date";
+
+"InfoView.title" = "";
+"InfoView.message" = "This app has been developed only for educational purposes. All rights reserved to NASA©.";
+"InfoView.webLink.title" = "Visit my website";
+
+
+
