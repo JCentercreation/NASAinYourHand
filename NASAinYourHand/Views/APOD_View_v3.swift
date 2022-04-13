@@ -72,7 +72,7 @@ struct APOD_View_v3: View {
                             }.background(.regularMaterial, in: RoundedRectangle(cornerRadius: 8, style: .continuous))
                         }
                         APOD_PopOver_View_v2(dayImage: dayImage)
-                            .padding(50)
+                            .padding(70)
                             .background(Color.white.opacity(0.3))
                             .onTapGesture {
                                 withAnimation(.easeInOut(duration: 0.3)) {
