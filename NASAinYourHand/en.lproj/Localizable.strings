@@ -19,6 +19,8 @@
 "TabsView.marsTag.title" = "Mars";
 "TabsView.infoTag.title" = "Info";
 
+"APODView.title" = "Astronomical Picture";
+"APODView.picture.title.default" = "Not found";
 "APODPopOverView.noInfoMessage.title" = "There is no information to show";
 
 "AsteroidsNeoWsView.title" = "Asteroids Near Earth";

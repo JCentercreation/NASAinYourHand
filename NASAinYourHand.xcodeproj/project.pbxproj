@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		990FE0232808437800FA074A /* APOD_View_v4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990FE0222808437800FA074A /* APOD_View_v4.swift */; };
+		990FE02528084BAC00FA074A /* APOD_PopOver_View_v3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990FE02428084BAC00FA074A /* APOD_PopOver_View_v3.swift */; };
 		9915D1CE27B03F3D00C827CA /* Apple_Athentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9915D1CD27B03F3D00C827CA /* Apple_Athentication.swift */; };
 		992B83CC2805B86800A414E3 /* APOD_Details_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992B83CB2805B86800A414E3 /* APOD_Details_View.swift */; };
 		992B83CE2805C44E00A414E3 /* Info_model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992B83CD2805C44E00A414E3 /* Info_model.swift */; };
@@ -74,6 +76,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		990FE0222808437800FA074A /* APOD_View_v4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APOD_View_v4.swift; sourceTree = "<group>"; };
+		990FE02428084BAC00FA074A /* APOD_PopOver_View_v3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APOD_PopOver_View_v3.swift; sourceTree = "<group>"; };
 		9915D1CD27B03F3D00C827CA /* Apple_Athentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apple_Athentication.swift; sourceTree = "<group>"; };
 		992B83CB2805B86800A414E3 /* APOD_Details_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APOD_Details_View.swift; sourceTree = "<group>"; };
 		992B83CD2805C44E00A414E3 /* Info_model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info_model.swift; sourceTree = "<group>"; };
@@ -234,8 +238,10 @@
 				99B587E02806255800C78147 /* APOD_Alert_View.swift */,
 				99B587E22806361600C78147 /* APOD_View_v2.swift */,
 				99471DFD2806FD2100928A58 /* APOD_View_v3.swift */,
+				990FE0222808437800FA074A /* APOD_View_v4.swift */,
 				99471DFF280706C600928A58 /* APOD_PopOver_View.swift */,
 				99AB380F280758FC004FD813 /* APOD_PopOver_View_v2.swift */,
+				990FE02428084BAC00FA074A /* APOD_PopOver_View_v3.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -414,8 +420,10 @@
 			files = (
 				994F2DCA278DE1CB001FA186 /* ContentView.swift in Sources */,
 				99F9134A27A7354400A75F60 /* mailStyleTextField_View.swift in Sources */,
+				990FE02528084BAC00FA074A /* APOD_PopOver_View_v3.swift in Sources */,
 				994F2DC8278DE1CB001FA186 /* NASAinYourHandApp.swift in Sources */,
 				99AFA6D127DD1E04008DACA4 /* Welcome_View.swift in Sources */,
+				990FE0232808437800FA074A /* APOD_View_v4.swift in Sources */,
 				99B8EFBB27DE434A009CBFA7 /* Info_View.swift in Sources */,
 				99B587E12806255800C78147 /* APOD_Alert_View.swift in Sources */,
 				99F9134C27A7357600A75F60 /* customColors_Color.swift in Sources */,

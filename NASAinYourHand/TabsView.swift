@@ -24,7 +24,7 @@ struct TabsView: View {
     
     var body: some View {
         TabView(selection: $selection) {
-            APOD_View_v3()
+            APOD_View_v4()
                 .tag(Tab.APOD)
                 .tabItem {
                     Label(NSLocalizedString("TabsView.apodTag.title", comment: ""), systemImage: "photo")
