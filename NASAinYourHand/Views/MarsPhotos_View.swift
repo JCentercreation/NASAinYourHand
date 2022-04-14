@@ -42,7 +42,7 @@ struct MarsPhotos_View: View {
                 Text(NSLocalizedString("MarsPhotosView.title", comment: ""))
                     .fontWeight(.bold)
                     .font(Font.title)
-                    .foregroundColor(.gray)
+                    .foregroundColor(Color(red: 231 / 255, green: 69 / 255, blue: 53 / 255))
                     .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
                 Spacer()
             }
@@ -59,7 +59,7 @@ struct MarsPhotos_View: View {
                         Spacer()
                         Text("\(date.formatted(date: .numeric, time: .omitted))")
                             .fontWeight(.bold)
-                            .foregroundColor(Color(red: 56 / 255, green: 119 / 255, blue: 237 / 255))
+                            .foregroundColor(Color(red: 231 / 255, green: 69 / 255, blue: 53 / 255))
                     }
                 }
             }.buttonStyle(.bordered)

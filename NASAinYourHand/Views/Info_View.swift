@@ -28,8 +28,8 @@ struct Info_View: View {
             Button {
                 infoDefaults.resetFirstLaunch()
             } label: {
-                Text("Resetea los ajustes de usuario")
-            }
+                Text(NSLocalizedString("InfoView.resetSettings.title", comment: ""))
+            }.padding()
         }
     }
 }

@@ -51,7 +51,7 @@ struct Asteroids_NeoWs_View: View {
                 Text(NSLocalizedString("AsteroidsNeoWsView.title", comment: ""))
                     .fontWeight(.bold)
                     .font(Font.title)
-                    .foregroundColor(.gray)
+                    .foregroundColor(.purple)
                     .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
                 Spacer()
             }
@@ -68,7 +68,7 @@ struct Asteroids_NeoWs_View: View {
                         Spacer()
                         Text("\(date.formatted(date: .numeric, time: .omitted))")
                             .fontWeight(.bold)
-                            .foregroundColor(Color(red: 56 / 255, green: 119 / 255, blue: 237 / 255))
+                            .foregroundColor(.purple)
                     }
                 }
             }.buttonStyle(.bordered)
@@ -89,7 +89,7 @@ struct Asteroids_NeoWs_View: View {
                     Text(NSLocalizedString("AsteroidsNeoWsView.filterToggle.title", comment: ""))
                         .fontWeight(.bold)
                 }.padding(.horizontal, 30)
-                    .tint(Color(red: 56 / 255, green: 119 / 255, blue: 237 / 255))
+                    .tint(.purple)
                 if asteroids.infoAsteroid?.isEmpty == false {
                     List {
                         if showOnlyHazardous == false {

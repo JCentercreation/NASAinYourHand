@@ -18,6 +18,19 @@ struct TabsView: View {
         case NeoWs
         case Mars
         case Info
+        
+        func color() -> Color {
+            switch self {
+            case .APOD:
+                return Color(red: 136 / 255, green: 207 / 255, blue: 139 / 255)
+            case .NeoWs:
+                return Color.purple
+            case .Mars:
+                return Color(red: 231 / 255, green: 69 / 255, blue: 53 / 255)
+            case .Info:
+                return Color.gray
+            }
+        }
     }
     
     @State private var selection = Tab.APOD
@@ -51,7 +64,7 @@ struct TabsView: View {
             UITabBar.appearance().standardAppearance = appearance
             UITabBar.appearance().scrollEdgeAppearance = appearance
         }
-        .accentColor(Color(red: 56 / 255, green: 119 / 255, blue: 237 / 255))
+        .accentColor(selection.color())
     }
 }
 

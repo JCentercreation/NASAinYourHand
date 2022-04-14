@@ -69,7 +69,7 @@ struct APOD_View_v4: View {
                     Text(NSLocalizedString("APODView.title", comment: ""))
                         .fontWeight(.bold)
                         .font(Font.title)
-                        .foregroundColor(.gray)
+                        .foregroundColor(Color(red: 136 / 255, green: 207 / 255, blue: 139 / 255))
                         .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
                     Spacer()
                 }
