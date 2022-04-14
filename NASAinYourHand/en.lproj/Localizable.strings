@@ -20,6 +20,7 @@
 "TabsView.infoTag.title" = "Info";
 
 "APODView.title" = "Astronomical Picture";
+"APODView.secondTitle" = "Latest Pictures";
 "APODView.picture.title.default" = "Not found";
 "APODPopOverView.noInfoMessage.title" = "There is no information to show";
 

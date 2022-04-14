@@ -7,7 +7,7 @@
 */
 "IntroductionView.title" = "Bienvenido";
 "IntroductionView.firstItem.title" = "Fotografía astronómica diaria";
-"IntroductionView.firstItem.subtitle" = "Consulta la fotografía astronómica del dái. Aprende toda la información científica sobre ella y su autor.";
+"IntroductionView.firstItem.subtitle" = "Consulta la fotografía astronómica del día. Aprende toda la información científica sobre ella y su autor.";
 "IntroductionView.secondItem.title" = "Asteroides cercanos";
 "IntroductionView.secondItem.subtitle" = "Conoce los asteroides localizados y filtralos en base a su peligrosidad para el planeta Tierra.";
 "IntroductionView.thirdItem.title" = "Imágenes de Marte";
@@ -20,6 +20,7 @@
 "TabsView.infoTag.title" = "Info";
 
 "APODView.title" = "Imagen Astronómica";
+"APODView.secondTitle" = "Últimas Imágenes";
 "APODView.picture.title.default" = "No encontrada";
 "APODPopOverView.noInfoMessage.title" = "No hay información para mostrar";
 

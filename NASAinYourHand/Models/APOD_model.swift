@@ -59,8 +59,61 @@ final class DayImage: ObservableObject {
     }
     
     func getDayImage(completion: @escaping (Info) -> ()) {
-        print("Funcion lanzada")
         let url = URL(string: "https://api.nasa.gov/planetary/apod?api_key="+apiKey)!
+
+        let jsonPublisher = URLSession.shared
+            .dataTaskPublisher(for: url)
+            .map(\.data)
+            .decode(type: APOD_GET_response.self, decoder: JSONDecoder())
+            .compactMap { $0 }
+            .share()
+            .receive(on: RunLoop.main)
+            .eraseToAnyPublisher()
+
+        func getImage(url: URL) -> AnyPublisher<UIImage, Error> {
+            URLSession.shared
+                .dataTaskPublisher(for: url)
+                .map(\.data)
+                .compactMap { UIImage(data: $0) }
+                .mapError { $0 as Error }
+                .receive(on: RunLoop.main)
+                .eraseToAnyPublisher()
+        }
+
+        let imagePublisher = jsonPublisher
+            .flatMap { item in
+                getImage(url: item.url ?? URL(string: "https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg")!)
+            }
+
+        Publishers.Zip(jsonPublisher, imagePublisher)
+            .sink { completion in
+                if case .failure(let error) = completion {
+                    print("Algo ha fallado \(error)")
+                }
+            } receiveValue: { json, image in
+                self.info?.resource = json.resource ?? ""
+                self.info?.concept_tags = json.concept_tags ?? false
+                self.info?.title = json.title ?? ""
+                self.info?.date = json.date ?? ""
+                self.info?.media_type = json.media_type ?? ""
+                self.info?.explanation = json.explanation ?? ""
+                self.info?.concepts = json.concepts ?? ""
+                self.info?.copyright = json.copyright ?? ""
+                self.info?.service_version = json.service_version ?? ""
+                self.info?.image = image
+                
+                completion(self.info ?? Info(resource: "", concept_tags: false, title: "", date: "", media_type: "", explanation: "", concepts: "", copyright: "", service_version: "", image: UIImage(systemName: "map")!))
+            }
+            .store(in: &subscribers)
+    }
+    
+    func getImage(date: Date, completion: @escaping (Info) -> ()) {
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        var dateString = formatter.string(from: date)
+        
+        let url = URL(string: "https://api.nasa.gov/planetary/apod?" + "date=" + dateString + "&api_key=" + apiKey)!
 
         let jsonPublisher = URLSession.shared
             .dataTaskPublisher(for: url)
