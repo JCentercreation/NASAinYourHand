@@ -33,7 +33,6 @@ final class Asteroides: ObservableObject {
         var dateString = formatter.string(from: date)
         let apiKey = "vfC1VzlR2WfH9S8si12Gcb5WmbVA1lVGyZ757HlU"
         var url = URL(string: "https://api.nasa.gov/neo/rest/v1/feed?start_date="+dateString+"&end_date="+dateString+"&api_key="+apiKey)!
-        print(url)
 
         struct Links: Codable{
             let next: URL?
@@ -130,12 +129,8 @@ final class Asteroides: ObservableObject {
 
         asteroidsPublisher.sink { completion in
             if case .failure(let error) = completion {
-                print("Algo ha fallado \(error)")
             }
         } receiveValue: { asteroids in
-            print("Recibida la respuesta")
-            print("\(asteroids)")
-
             if let asteroides = asteroids.near_earth_objects {
                 for asteroid in asteroides {
                     var infoAsteroide = InfoAsteroid(name: "", closeApproachDate: "", velocity: "", isDanger: false, distance: "")
