@@ -42,6 +42,7 @@
 "InfoView.message" = "This app has been developed only for educational purposes. All rights reserved to NASA©.";
 "InfoView.webLink.title" = "Visit my website";
 "InfoView.resetSettings.title" = "Reset settings";
+"InfoView.privacyPolicy.link" = "Privacy Policy";
 
 
 

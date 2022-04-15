@@ -21,8 +21,6 @@ struct Info_View: View {
                     .padding()
                 Text(NSLocalizedString("InfoView.message", comment: ""))
                     .multilineTextAlignment(.center)
-                Link(NSLocalizedString("InfoView.webLink.title", comment: ""), destination: URL(string: "https://www.javiercarrilloblog.com")!)
-                    .padding()
             }.padding()
             Spacer()
             Button {
