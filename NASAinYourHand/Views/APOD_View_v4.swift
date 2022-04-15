@@ -92,7 +92,6 @@ struct APOD_View_v4: View {
                             Text(dayImage.info?.title ?? NSLocalizedString("APODView.picture.title.default", comment: ""))
                                 .font(.title)
                                 .fontWeight(.bold)
-                                .lineLimit(1)
                             Text(dayImage.info?.copyright ?? NSLocalizedString("APODView.picture.title.default", comment: ""))
                                 .font(.subheadline)
                         }
